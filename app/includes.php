@@ -39,9 +39,9 @@ require 'toolbox.inc.php';
 
     $arr_error[ 1 ] = 'transaction Ajouté';
     $arr_error[ 2 ] = 'Transaction Echoué';
-    $arr_error[ 3 ] = 'Accès Refuse';
-    $arr_error[ 4 ] = 'Erreur lors de la transfert';
-    $arr_error[ 5 ] = 'Accès Autorisé';
+    $arr_error[ 3 ] = 'Email Déjà utilisé';
+    $arr_error[ 4 ] = 'Email non valide';
+    $arr_error[ 5 ] = 'Inscription Reussie';
     $arr_error[ 6 ] = 'Inscription Réussie';
     $arr_error[ 7 ] = 'Connexion Réussie';
     $arr_error[ 8 ] = 'Modification Réussie';

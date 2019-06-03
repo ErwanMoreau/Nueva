@@ -11,7 +11,7 @@
 ?>
   <div class='container-fluid '>
     <div class="est-bg-nav est-pos-nav">
-      <?php if(isset($_SESSION['access'])):?>
+      <?php if(isset($_SESSION['acces'])):?>
         <div class="row">
           <div class="col-md-12">
             <img src="image/miniature/<?= $user['logo'];?>" alt="">
@@ -57,5 +57,13 @@
         </div>
             
       </div>
+      <?php if(isset($_SESSION['acces'])):?>
+        <div class="row">
+          <div class="col-md-12">
+            <a href="index.php?id=9" class='btn btn-danger est-ml'>Déconnexion</a>
+          </div>
+      </div>
+      <?php endif;?>
+      
     </div>      
   </div>

@@ -2,14 +2,14 @@
 
 unset($_SESSION['success']);
 require 'bdd.php';
-var_dump(filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL));
-if(filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)){
-    $sql = $connexion->prepare('SELECT * FROM blog_user WHERE email = :mail');
+var_dump(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL));
+if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
+    $sql = $connexion->prepare('SELECT * FROM user WHERE email = :mail');
 
 
         $sql->execute(
             [
-                'mail'    => $_POST['mail'],
+                'mail'    => $_POST['email'],
             ]
             );
 
@@ -41,7 +41,7 @@ if(filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)){
                     $_SESSION['acces+'] = true;
                 }
                 // var_dump($_SESSION['acces']);
-        header('Location: index.php?id=1&error=7');
+        header('Location: index.php?id=2&error=7');
         }else{
             
             header('Location: index.php?id=1&error=1');

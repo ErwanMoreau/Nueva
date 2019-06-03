@@ -34,7 +34,10 @@ ob_start();
     // if(!isset($_SESSION['acces'])){
     //     require_once 'view/connect.php';
     // }
-    require_once 'view/navbar.php';
+    // if(isset($_SESSION['acces'])){
+    //   require_once 'view/navbar.php';  
+    // }
+    
     require_once 'app/router.php';
 
 ?>

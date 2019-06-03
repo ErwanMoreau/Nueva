@@ -11,7 +11,7 @@
 }
 .est-trait{
   height: 1px;
-  width: 330px;
+  width: 350px;
   background-color: gray;
 }
 .est-pos-nav{
@@ -21,7 +21,7 @@
 }
 .est-bg-nav{
   background-color: #1A1A1A;
-  width: 330px;
+  width: 350px;
   min-height: 935px;
 
 }
@@ -45,6 +45,9 @@
 
 /* fin de Menu de Navigation   */
 /* Parametre general  */
+body{
+  font-family: 'Roboto Slab', serif;
+}
 a{
   color: lightgray;
 }
@@ -92,4 +95,56 @@ body{
 /* add transaction de compte  */
 
 /* fin compte Famille  */
+/* Accueil du site  */
 
+.est-bg-connexion{
+  width: 450px;
+  height: 520px;
+  background-color: white;
+  box-shadow: 1px 1px 10px 0px #656565;
+  border-radius: 10px;
+  position: absolute;
+  top: 200px;
+  left: 727px;
+}
+label{
+  color: black;
+}
+.est-text-connexion{
+  color: black;
+}
+.est-lien-connexion{
+  color: black;
+}
+.est-lien-connexion:hover{
+  color: gray;
+  text-decoration: underline;
+}
+.est-btn-connexion{
+  padding-right: 30px;
+  padding-left: 30px;
+}
+.est-bg-connexion-img{
+  background-image: url('../image/background.jpg');
+  height: 945px;
+}
+.est-pos-img-cosa{
+  position: absolute;
+  top: 50px;
+  left: 50px;
+}
+/* fin du accueil  */
+/* Partie Inscription  */
+.est-pos-inscription{
+  position: absolute;
+  top: 200px;
+  left: 500px;
+  
+  width: 950px;
+}
+.est-pos-inscription label{
+  color: white;
+}
+.est-ml{
+  margin-left: 100px;
+}
