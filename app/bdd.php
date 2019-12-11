@@ -1,15 +1,15 @@
 <?php
 // Connexion à la base de données
-// nous utiliserons aussi les gestinnaire d'erreur 
-//c'est une bonne pratique d'utiliser le try et catch 
+// nous utiliserons aussi les gestionaire d'erreur 
 
-$dbname   = 'nueva';
+
+$dbname   = 'base';
 $username = 'root';
 $password = '';
 
 try {
 
-   // PDO est un objet qui prend 3 parametres minimum
+  
    $connexion = new PDO("mysql:host=localhost;charset=UTF8;dbname=".$dbname, $username, $password);
 
 } catch (PDOException $error) {

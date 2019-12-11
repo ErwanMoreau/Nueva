@@ -13,97 +13,120 @@ $(function(){
 			}
 	}
 	
-	var validateTel = tel => {
-		var telReg = new RegExp("^(0|\\+33|0033)[1-9][0-9]{8}$");
-		var valid = telReg.test(tel);
-	
-		if(!valid) {
-			return false;
-		} else {
-			return true;
-		}
-	}
-	
-	$('#contact').on('submit', function(e){
-		//e.preventDefault();
 
-		let hasErrors = false;
-		let $nom    = $('#inputnom'),
-			$prenom = $('#inputprenom'),
-			$email  = $('#inputemail'),
-			$sujet 	= $('#inputsujet'),
-			$red    = 'style=" color : white;padding-left: 10px;  background-color: tomato; border : 1px solid tomato" '; 
-        	//$green      = 'style=" color : white;padding-left: 10px;  background-color: green; border : 1px solid green" ';
+	
+	$('#addUser').on('submit', function(e){
+		// e.preventDefault();
+
+		// let hasErrors = false;
+		// let $nom    = $('#nom'),
+		// 	$prenom = $('#prenom'),
+		// 	$email  = $('#email'),
+		// 	$password 	= $('#password'),
+		// 	$grade 	= $('#id_grade'),
+		// 	$matricule 	= $('#matricule'),
+		// 	$red    = 'style=" color : white;padding: 8px 10px 0 10px; font-size: 0.8rem;  background-color: tomato; border : 1px solid tomato" '; 
+        // 	$green      = 'style=" color : white;padding-left: 10px;  background-color: green; border : 1px solid green" ';
         
-		if($nom.val().length === 0 ){
-			// je supprime la derniere notification 
-			$nom.next().remove(); 
-			// si l'elelement suivant le input a la classe invalid 
-			// si invalide alors je ne le réaffiche pas 
+		// if($nom.val().length === 0 ){
+		// 	// je supprime la derniere notification 
+		// 	$nom.next().remove(); 
+		// 	// si l'elelement suivant le input a la classe invalid 
+		// 	// si invalide alors je ne le réaffiche pas 
 													
-			if (!$nom.next().hasClass('invalid')){
-				$('<div class="invalid" '+ $red +'> Vous n\'avez pas rempli votre nom </div>').appendTo($nom.parent());
-			}
+		// 	if (!$nom.next().hasClass('invalid')){
+		// 		$('<div class="invalid" '+ $red +'> Vous n\'avez pas rempli le nom </div>').appendTo($nom.parent());
+		// 	}
 			
-			hasErrors = true;
-		}
+		// 	hasErrors = true;
+		// }
 		
-		if($prenom.val().length === 0 ){
-			// je supprime la derniere notification 
-			$prenom.next().remove(); 
-			// si l'elelement suivant le input a la classe invalid 
-			// si invalide alors je ne le réaffiche pas 
+		// if($prenom.val().length === 0 ){
+		// 	// je supprime la derniere notification 
+		// 	$prenom.next().remove(); 
+		// 	// si l'elelement suivant le input a la classe invalid 
+		// 	// si invalide alors je ne le réaffiche pas 
 													
-			if (!$prenom.next().hasClass('invalid')){
-				$('<div class="invalid" '+ $red +'> Vous n\'avez pas rempli votre prenom </div>').appendTo($prenom.parent());
-			}
+		// 	if (!$prenom.next().hasClass('invalid')){
+		// 		$('<div class="invalid" '+ $red +'> Vous n\'avez pas rempli le prenom </div>').appendTo($prenom.parent());
+		// 	}
 			
-			hasErrors = true;
-		}
+		// 	hasErrors = true;
+		// }
 
-		if($sujet.val().length === 0 ){
-			// je supprime la derniere notification 
-			$sujet.next().remove(); 
-			// si l'elelement suivant le input a la classe invalid 
-			// si invalide alors je ne le réaffiche pas 
+		// if($password.val().length === 0 ){
+		// 	// je supprime la derniere notification 
+		// 	$password.next().remove(); 
+		// 	// si l'elelement suivant le input a la classe invalid 
+		// 	// si invalide alors je ne le réaffiche pas 
 													
-			if (!$sujet.next().hasClass('invalid')){
-				$('<div class="invalid" '+ $red +'> Vous n\'avez pas rempli le sujet </div>').appendTo($sujet.parent());
-			}
+		// 	if (!$password.next().hasClass('invalid')){
+		// 		$('<div class="invalid" '+ $red +'> Vous n\'avez pas générer le password </div>').appendTo($password.parent());
+		// 	}
 			
-			hasErrors = true;
-		}
+		// 	hasErrors = true;
+		// }
 		
-		if(!validateEmail($email.val())){
-			// je supprime la derniere notification 
-			$email.next().remove(); 
-			// si l'elelement suivant le input a la classe invalid 
-			// si invalide alors je ne le réaffiche pas 
+		// if(!validateEmail($email.val())){
+		// 	// je supprime la derniere notification 
+		// 	$email.next().remove(); 
+		// 	// si l'elelement suivant le input a la classe invalid 
+		// 	// si invalide alors je ne le réaffiche pas 
 												
-			if (!$email.next().hasClass('invalid')){
-				$('<div class="invalid" '+ $red +'> L\'adresse mail n\'est pas correcte </div>').appendTo($email.parent());
-			}
+		// 	if (!$email.next().hasClass('invalid')){
+		// 		$('<div class="invalid" '+ $red +'> L\'adresse mail n\'est pas correcte </div>').appendTo($email.parent());
+		// 	}
 			
-			hasErrors = true;
-		}
+		// 	hasErrors = true;
+		// }
+		// if($matricule.val().length === 0 ){
+		// 	// je supprime la derniere notification 
+		// 	$matricule.next().remove(); 
+		// 	// si l'elelement suivant le input a la classe invalid 
+		// 	// si invalide alors je ne le réaffiche pas 
+												
+		// 	if (!$matricule.next().hasClass('invalid')){
+		// 		$('<div class="invalid" '+ $red +'> Le matricule n\'est pas remplie </div>').appendTo($matricule.parent());
+		// 	}
+			
+		// 	hasErrors = true;
+		// }
 
-		if(!hasErrors){
-			return true;
-		} else {
-			return false;
-		}
+		// if($grade.val() === 0 ){
+		// 	// je supprime la derniere notification 
+		// 	$grade.next().remove(); 
+		// 	// si l'elelement suivant le input a la classe invalid 
+		// 	// si invalide alors je ne le réaffiche pas 
+												
+		// 	if (!$grade.next().hasClass('invalid')){
+		// 		$('<div class="invalid" '+ $red +'> L\'adresse mail n\'est pas correcte </div>').appendTo($grade.parent());
+		// 	}
+			
+		// 	hasErrors = true;
+		// }
+		// console.log(hasErrors);
+
+		// if(!hasErrors){
+		// 	return true;
+		// } else {
+		// 	return false;
+		// }
 	});
-/*
-	$('#connect').on('change',function(){
-		let $change = $('input[name=gridCheck1]:checked', '#connect').val();
-		console.log('321321'+$change);
-		if($change === 'on'){
-			<?php ?>
-		}else{
-			console.log("Le checkbox n'est pas coché");
+
+	$('#inputPassword').on('click',function(){
+
+		const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+		const string_length = 8;
+		let randomstring = '';
+
+		for (let i = 0; i < string_length; i++) {
+			const rnum = Math.floor(Math.random() * chars.length);
+			randomstring += chars.substring(rnum, rnum + 1);
 		}
+		$('#password').val(randomstring);
+
 	})
-	*/
+	
 	$('#connect').on('submit', function(e){
 		
 		let hasErrors = false;

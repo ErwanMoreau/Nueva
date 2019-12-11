@@ -1,150 +1,35 @@
-/* Menu de Navigation  */
-.est-logo-nav{
-  font-size: 3rem;
-}
-.est-info{
-  margin-left: 40px!important;
-}
-.est-text-nav{
-  font-size: 2rem;
-  margin-left: 20px;
-}
-.est-trait{
-  height: 1px;
-  width: 350px;
-  background-color: gray;
-}
-.est-pos-nav{
-  position: absolute;
-  top: 0px;
-  left: 0px;
-}
-.est-bg-nav{
-  background-color: #1A1A1A;
-  width: 350px;
-  min-height: 935px;
-
-}
-.est-bg-nav i{
-  margin-left: 20px;
-}
-.est-cia{
-  width: 50px;
-  height: 50px;
-  margin-left: 20px;
-}
-.est-syrta{
-  width: 50px;
-  height: 50px;
-  margin-left: 20px;
-}
-.est-mt{
-  margin-top:100px;
-}
-
-
-/* fin de Menu de Navigation   */
-/* Parametre general  */
-body{
-  font-family: 'Roboto Slab', serif;
-}
-a{
-  color: lightgray;
-}
-a:hover{
-  text-decoration: none;
-  color: gray;
-}
-a i{
-  color: white;
-}
-body{
-  background-color: #4A4A4A;
-  color: white;
-}
-
-/* fin parametre  */
-/* Partie Compte Famille  */
-.est-bg-somme-compte{
-  background-color: #1A1A1A;
-  width: 200px;
-  height: 50px;
-  border-radius: 10px;
-  border: 1px solid gray;
-  box-shadow: 1px 1px 10px 0px #656565;
-  position: absolute;
-  top: 50px;
-  right: 200px;
-}
-.est-pos-h2{
-  position: absolute;
-  top: 15px;
-  right: 215px;
-}
-.est-text-h2{
-  font-size: 1.5rem;
-}
-.est-height-compte{
-  height: 150px;
-}
-.est-pos-btn{
-  position: absolute;
-  bottom: 50px;
-  left: 400px;
-}
-/* add transaction de compte  */
-
-/* fin compte Famille  */
-/* Accueil du site  */
-
-.est-bg-connexion{
-  width: 450px;
-  height: 520px;
-  background-color: white;
-  box-shadow: 1px 1px 10px 0px #656565;
-  border-radius: 10px;
-  position: absolute;
-  top: 200px;
-  left: 727px;
-}
-label{
-  color: black;
-}
-.est-text-connexion{
-  color: black;
-}
-.est-lien-connexion{
-  color: black;
-}
-.est-lien-connexion:hover{
-  color: gray;
-  text-decoration: underline;
-}
-.est-btn-connexion{
-  padding-right: 30px;
-  padding-left: 30px;
-}
-.est-bg-connexion-img{
-  background-image: url('../image/background.jpg');
-  height: 945px;
-}
-.est-pos-img-cosa{
-  position: absolute;
-  top: 50px;
-  left: 50px;
-}
-/* fin du accueil  */
-/* Partie Inscription  */
-.est-pos-inscription{
-  position: absolute;
-  top: 200px;
-  left: 500px;
+.customBtn{
+    position: absolute;
+    top: 4px;
+    right: 50px;
+    z-index: 1000;
+ }
+ .customBtnBis{
+    color: white!important;
+ }
+ .customTitleAdd{
+    font-size: 1.4rem;
+ }
   
-  width: 950px;
-}
-.est-pos-inscription label{
-  color: white;
-}
-.est-ml{
-  margin-left: 100px;
-}
+ .customTAC{
+    text-align: center;
+ }
+ .customTAL{
+    text-align: left;
+ }
+ .customTAR{
+    text-align: right;
+ }
+ .customTitleCard{
+    font-size: 1.4rem;
+    font-family: 'Baskervville', serif;
+    font-weight: bold;
+ }
+ .customTitleCardBis{
+    font-size: 1.2rem;
+    font-style: italic;
+ }
+ .customTitleCardLitle{
+    font-size: 1rem;
+ }
+ 

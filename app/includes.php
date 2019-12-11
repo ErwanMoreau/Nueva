@@ -2,53 +2,82 @@
 
 require 'toolbox.inc.php';
 
-    $arr_content[ 1 ] = 'home';
-    $arr_content[ 2 ] = 'compte';
-    $arr_content[ 3 ] = 'taxe';
-    $arr_content[ 4 ] = 'cia';
-    $arr_content[ 5 ] = 'recensement';
-    $arr_content[ 6 ] = 'stockage';
-    $arr_content[ 7 ] = 'information';
-    $arr_content[ 8 ] = 'profil';
-    $arr_content[ 9 ] = 'deconnexion';
-    $arr_content[ 10 ] = 'add_transaction';
-    $arr_content[ 11 ] = 'edit_transaction';
-    $arr_content[ 12 ] = 'add_taxe';
-    $arr_content[ 13 ] = 'edit_taxe';
-    $arr_content[ 14 ] = 'add_cia';
-    $arr_content[ 15 ] = 'edit_cia';
-    $arr_content[ 16 ] = 'add_recensement';
-    $arr_content[ 17 ] = 'edit_recensement';
-    $arr_content[ 18 ] = 'add_stockage';
-    $arr_content[ 19 ] = 'edit_stockage';
-    $arr_content[ 20 ] = 'add_information';
-    $arr_content[ 21 ] = 'edit_information';
-    $arr_content[ 22 ] = 'inscription';
-    $arr_content[ 23 ] = 'edit_profil';
+    // front page
+    $arr_content[ 1 ] = 'connect';
+    $arr_content[ 2 ] = 'reset-password';
+    $arr_content[ 3 ] = 'index';
+
+    $arr_content[ 4 ] = 'add-user';
+    $arr_content[ 5 ] = 'list-user';
+    $arr_content[ 6 ] = 'profile';
+
+    $arr_content[ 7 ] = 'add-casier';
+    $arr_content[ 8 ] = 'edit-casier';
+    $arr_content[ 9 ] = 'casier';
+
+    $arr_content[ 10 ] = 'hierachie';
+
+    $arr_content[ 11 ] = 'rapport';
+    $arr_content[ 12 ] = 'add-rapport';
+    $arr_content[ 13 ] = 'edit-rapport';
+    $arr_content[ 14 ] = 'list-rapport';
+
+    $arr_content[ 15 ] = 'amende';
+    $arr_content[ 16 ] = 'add-amende';
+    $arr_content[ 17 ] = 'edit-amende';
+
+    $arr_content[ 18 ] = 'dossier';
+    $arr_content[ 19 ] = 'add-dossier';
+    $arr_content[ 20 ] = 'edit-dossier';
+    $arr_content[ 21 ] = 'list-dossier';
+    $arr_content[ 22 ] = '';
+    $arr_content[ 23 ] = '';
     
+
+    // Back page
     $arr_content[ 100 ] = 'connexion';
-    $arr_content[ 101 ] = 'inscription';
-    $arr_content[ 102 ] = 'add_transaction';
-    $arr_content[ 103 ] = 'edit_transaction';
-    $arr_content[ 104 ] = '';
-    $arr_content[ 105 ] = '';
-    $arr_content[ 106 ] = '';
-    $arr_content[ 107 ] = 'inscription';
+    $arr_content[ 101 ] = 'reset-password';
+
+    $arr_content[ 102 ] = 'add-user';
+    $arr_content[ 103 ] = 'edit-user';
+    $arr_content[ 104 ] = 'delete-user';
+
+    $arr_content[ 105 ] = 'add-casier';
+    $arr_content[ 106 ] = 'edit-casier';
+    $arr_content[ 107 ] = 'delete-casier';
+
+    $arr_content[ 108 ] = 'add-infraction';
+    $arr_content[ 109 ] = 'edit-infraction';
+    $arr_content[ 110 ] = 'delete-infraction';
+
+    $arr_content[ 111 ] = 'add-amende';
+    $arr_content[ 112 ] = 'edit-amende';
+    $arr_content[ 113 ] = 'delete-amende';
+
+    $arr_content[ 114 ] = 'add-dossier';
+    $arr_content[ 115 ] = 'edit-dossier';
+    $arr_content[ 116 ] = 'delete-dossier';
+
+    $arr_content[ 117 ] = '';
+    $arr_content[ 118 ] = '';
+    $arr_content[ 119 ] = '';
+    $arr_content[ 120 ] = '';
 
 
 
-    $arr_error[ 1 ] = 'transaction Ajouté';
-    $arr_error[ 2 ] = 'Transaction Echoué';
-    $arr_error[ 3 ] = 'Email Déjà utilisé';
-    $arr_error[ 4 ] = 'Email non valide';
-    $arr_error[ 5 ] = 'Inscription Reussie';
-    $arr_error[ 6 ] = 'Inscription Réussie';
-    $arr_error[ 7 ] = 'Connexion Réussie';
-    $arr_error[ 8 ] = 'Modification Réussie';
-    $arr_error[ 9 ] = 'Suppresion Réussie';
-    $arr_error[ 10 ] = 'Modification echoué';
-    $arr_error[ 11 ] = 'Suppresion echoué';
-    $arr_error[ 12 ] = 'Mauvaise Extension';
-    $arr_error[ 13 ] = 'Fichier trop Gros';
-    $arr_error[ 14 ] = 'Email Incorrect';
+    // error and succes 
+    $arr_error[ 1 ] = 'User Ajouté';
+    $arr_error[ 2 ] = 'Erreur lors de l\'ajout';
+    $arr_error[ 3 ] = '';
+    $arr_error[ 4 ] = '';
+    $arr_error[ 5 ] = '';
+    $arr_error[ 6 ] = '';
+    $arr_error[ 7 ] = '';
+    $arr_error[ 8 ] = '';
+    $arr_error[ 9 ] = '';
+    $arr_error[ 10 ] = '';
+    $arr_error[ 11 ] = '';
+    $arr_error[ 12 ] = '';
+    $arr_error[ 13 ] = '';
+    $arr_error[ 14 ] = '';
     
