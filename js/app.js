@@ -13,8 +13,8 @@ $(function(){
 			}
 	}
 	
+	$('#editor').trumbowyg(); 
 
-	
 	$('#addUser').on('submit', function(e){
 		// e.preventDefault();
 
