@@ -1,5 +1,5 @@
 <?php  if( !isset($_SESSION['acces'])){
-    // header('Location: index.php?id=1&error=3');
+    header('Location: index.php?id=1');
 }
     require './app/bdd.php';
     $grade = $connexion->prepare('SELECT *  FROM grade');
@@ -7,7 +7,6 @@
     $resultat = $grade->fetchAll(PDO::FETCH_ASSOC);
 
  ?>
-
 <div class="container mt-5">
   <form action="index.php?id=102" method="POST" id="addUser">
       <div class="card">
@@ -82,7 +81,7 @@
                 <div class="input-group-prepend">
                   <button class="btn btn-outline-secondary"  type="button" id="inputPassword">Générer mdp </button>
                 </div>
-                <input type="text" id="password" name="password"  class="form-control" aria-label="inputPassword" aria-describedby="inputPassword" required readonly>
+                <input type="text" id="password" name="password"  class="form-control" aria-label="inputPassword" aria-describedby="inputPassword" required >
               </div>
             </div>
           </div>

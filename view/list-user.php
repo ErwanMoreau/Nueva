@@ -13,7 +13,7 @@
 
 ?>
 
-<button class="btn customBtn btn-outline-success" [routerLink]="['/add-user']">Add Policer</button>
+<a class="btn customBtn btn-outline-success" href="index.php?id=4">Add Policer</a>
  
  <div class="col-md-12">
       <table class="table">

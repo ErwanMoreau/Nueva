@@ -29,19 +29,26 @@ ob_start();
     require_once 'view/head.php'
 
 ?>
+<div class="container-fluid">
+    <div class="row">
+        <?php 
+            if(isset($_SESSION['acces'])){
+        ?>
 
-<?php 
-    // if(!isset($_SESSION['acces'])){
-    //     require_once 'view/connect.php';
-    // }
-    // if(isset($_SESSION['acces'])){
-    //   require_once 'view/navbar.php';  
-    // }
-    
-    require_once 'app/router.php';
+        <div class="col-md-2 customBg">
+            <?php    
+            require_once 'view/sidebar.php';  
+            }
+            ?>
+        </div>
 
-?>
-
+        <div class="col-md-10">
+            <?php 
+                require_once 'app/router.php';
+            ?>
+        </div>
+    </div>
+</div>
 <?php 
     require_once 'view/footer.php';
     ob_end_flush();

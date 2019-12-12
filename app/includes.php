@@ -5,7 +5,7 @@ require 'toolbox.inc.php';
     // front page
     $arr_content[ 1 ] = 'connect';
     $arr_content[ 2 ] = 'reset-password';
-    $arr_content[ 3 ] = 'index';
+    $arr_content[ 3 ] = 'home';
 
     $arr_content[ 4 ] = 'add-user';
     $arr_content[ 5 ] = 'list-user';
@@ -30,7 +30,7 @@ require 'toolbox.inc.php';
     $arr_content[ 19 ] = 'add-dossier';
     $arr_content[ 20 ] = 'edit-dossier';
     $arr_content[ 21 ] = 'list-dossier';
-    $arr_content[ 22 ] = '';
+    $arr_content[ 22 ] = 'list-casier';
     $arr_content[ 23 ] = '';
     
 
@@ -58,10 +58,12 @@ require 'toolbox.inc.php';
     $arr_content[ 115 ] = 'edit-dossier';
     $arr_content[ 116 ] = 'delete-dossier';
 
-    $arr_content[ 117 ] = '';
-    $arr_content[ 118 ] = '';
-    $arr_content[ 119 ] = '';
-    $arr_content[ 120 ] = '';
+    $arr_content[ 117 ] = 'add-information';
+    $arr_content[ 118 ] = 'delete-information';
+
+    $arr_content[ 119 ] = 'add-rapport';
+    $arr_content[ 120 ] = 'edit-rapport';
+    $arr_content[ 121 ] = 'delete-rapport';
 
 
 

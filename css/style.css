@@ -33,3 +33,219 @@
     font-size: 1rem;
  }
  
+
+ /* ----------------------------------------------------------------------------- */
+
+/* For Login Page */
+
+/* ------------------------------------------------------------------------------- */
+
+.user_card {
+   height: 400px;
+   width: 350px;
+   margin-top: auto;
+   margin-bottom: auto;
+   background: white;
+   position: relative;
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   padding: 10px;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   border-radius: 5px;
+ 
+ }
+ .brand_logo_container {
+   position: absolute;
+   height: 170px;
+   width: 170px;
+   top: -75px;
+   border-radius: 50%;
+   background: white;
+   padding: 10px;
+   text-align: center;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ }
+ .brand_logo {
+   height: 150px;
+   width: 150px;
+   border-radius: 50%;
+   border: 2px solid white;
+ }
+ .form_container {
+   margin-top: 100px;
+ }
+ .login_btn {
+   width: 100%;
+   background: #007bff !important;
+   color: white !important;
+ }
+ .login_btn:focus {
+   box-shadow: none !important;
+   outline: 0px !important;
+ }
+ .login_container {
+   padding: 0 2rem;
+ }
+ .input-group-text {
+   background: #007bff !important;
+   color: white !important;
+   border: 0 !important;
+   border-radius: 0.25rem 0 0 0.25rem !important;
+ }
+ .input_user,
+ .input_pass:focus {
+   box-shadow: none !important;
+   outline: 0px !important;
+ }
+ .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+   background-color: #c0392b !important;
+ }
+ .customPos{
+   position: absolute;
+   left: 50%;
+   top:  200px;
+ }
+
+
+/* sjLgGjFs */
+ 
+ /* ------------------------------------------------------------------------------------------- */
+
+/*  Sidebar  */
+ 
+ /* ------------------------------------------------------------------------------------------- */
+ .customH1{
+  font-size: 1.2rem;
+  color: white;
+}
+.customH1Bis{
+  font-size: 1rem;
+  color: white;
+}
+.customMt-5{
+  margin-top: 6rem!important;
+}
+.customLink{
+  text-decoration: none;
+}
+.customColorSvg{
+  fill: white;
+}
+.customLink:hover{
+  cursor: pointer;
+  color: lightgray;
+}
+.customColorSvg:hover{
+  fill: lightgray ;
+  cursor: pointer;
+}
+.customDivider{
+  border-top: 3px solid lightgray;
+  width: 80%;
+}
+.customPosLogo{
+  position: absolute;
+  z-index: 20;
+  top: 5px;
+  left: 30px;
+  cursor: pointer;
+  height : 80px;
+  width: 300px;
+}
+
+.customBg{
+  background-color: #0367b5 ;
+  height: 950px!important;
+
+}
+.customLogo{
+  width: 180px;
+  height: 180px;
+}
+
+@media screen and (min-width: 1300px) and (max-width: 1400px) {
+  .customPosLogo {
+    left: 5px;
+    height: 70px;
+    width: 250px;
+  }
+  .customBg{
+    background-color: #0367b5 ;
+    height: 820px!important;
+  
+  }
+}
+
+@media screen and (min-width: 1900px) and (max-width: 2000px) {
+  .customPosLogo {
+    left: 5px;
+    height: 100px;
+    width: 360px;
+  }
+  .customLogo{
+    width: 220px;
+    height: 220px;
+  }
+  .customBg{
+    background-color: #0367b5 ;
+    height: 1096px!important;
+  
+  }
+}
+
+@media screen and (min-width: 2500px) and (max-width: 2600px) {
+  .customPosLogo {
+    left: 5px;
+    height: 130px;
+    width: 455px;
+  }
+  .customLogo{
+    width: 250px;
+    height: 250px;
+  }
+  .customBg{
+    background-color: #0367b5 ;
+    height: 1336px!important;
+  
+  }
+}
+
+ /* ------------------------------------------------------------------------------------------- */
+
+/*  DashBoard  */
+ 
+ /* ------------------------------------------------------------------------------------------- */
+
+ .customBtnDash{
+  color: white!important;
+  padding-left: 20px;
+  padding-right: 20px;
+  cursor: pointer;
+}
+.cutomMt-4{
+  margin-top: 1.9rem;
+}
+
+ /* ------------------------------------------------------------------------------------------- */
+
+/*  rapport  */
+ 
+ /* ------------------------------------------------------------------------------------------- */
+
+ .customTitle{
+   font-size: 1.6rem;
+   font-family: 'Source Code Pro', monospace;
+   font-weight: bold;
+ }
+ .customTitleRapport{
+   font-size: 1.2rem;
+   font-family: 'Source Code Pro', monospace;
+   text-decoration: underline;
+   font-weight: bold;
+
+ }
