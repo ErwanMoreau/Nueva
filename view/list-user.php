@@ -1,6 +1,6 @@
 <?php
  if( !isset($_SESSION['acces'])){
-    // header('Location: index.php?id=1&error=3');
+     header('Location: index.php?id=1&error=3');
 }
     require './app/bdd.php';
     $grade = $connexion->prepare('SELECT * FROM user, grade where user.id_grade = grade.id ORDER BY id_grade ASC');

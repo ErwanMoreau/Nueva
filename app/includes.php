@@ -65,6 +65,9 @@ require 'toolbox.inc.php';
     $arr_content[ 120 ] = 'edit-rapport';
     $arr_content[ 121 ] = 'delete-rapport';
 
+    $arr_content[ 122 ] = 'edit-freq-courte';
+    $arr_content[ 123 ] = 'edit-freq-longue';
+
 
 
     // error and succes 

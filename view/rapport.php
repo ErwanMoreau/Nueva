@@ -1,4 +1,7 @@
 <?php 
+if( !isset($_SESSION['acces'])){
+    header('Location: index.php?id=1');
+}
     require './app/bdd.php';
 
     $id_rapport = $_GET['id_rapport'];
@@ -24,17 +27,7 @@
                                 Rapport: 
                             </h2>
                             <p><?= $resultat['contenue'] ?></p>
-                            <!-- <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta aperiam ratione placeat provident optio nisi, quis nihil asperiores voluptatibus, quae officia voluptatum fugiat quisquam molestiae omnis aliquid odio maiores laboriosam.
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto, ex, voluptates velit dolores quisquam aliquid fugiat aperiam omnis repellendus autem provident temporibus est laborum excepturi reiciendis saepe ducimus. Modi, molestias?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur aperiam asperiores mollitia sapiente et maxime in, voluptatem possimus, culpa deserunt aspernatur perferendis alias blanditiis adipisci. Tenetur, magni? Repellendus, delectus voluptates?
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore asperiores quos quam nemo est hic laudantium consequuntur tempora, necessitatibus inventore blanditiis saepe praesentium accusamus minima eius veritatis repellat illo voluptatum!
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt iusto optio velit autem, excepturi quaerat perspiciatis odio neque in quis illo sint vitae eligendi minima sequi quasi esse. Voluptates, neque?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, architecto amet. Magnam consequatur dolorem sit ut iste asperiores vel, deleniti animi maxime facere beatae facilis eum non quisquam sequi voluptatem?
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis maxime vel voluptatem consequatur quae labore quia impedit aliquid eveniet rerum magni, nobis totam animi, ullam ipsum saepe nihil omnis veritatis!
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo eos nulla non aperiam commodi. Debitis ex, modi, magnam quidem minus officia illum beatae id sapiente nesciunt saepe tempore? Quam, doloribus.
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia atque corrupti, assumenda, illum mollitia, placeat voluptatum et expedita quis magnam explicabo! Earum, debitis vitae repellat doloribus et natus aliquid facere.
-
-                            </p> -->
+                           
                         </div>
                     </div>
                 </div>

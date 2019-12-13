@@ -125,64 +125,26 @@ $(function(){
 		}
 		$('#password').val(randomstring);
 
-	})
+	});
+
+	$('#numerosCasier').on('click',function(){
+
+		const chars = '0123456789';
+		const StringLength = 8;
+		let RandomString = '';
+		for (let i = 0; i < StringLength; i++) {
+		const rnum = Math.floor(Math.random() * chars.length);
+		RandomString += chars.substring(rnum, rnum + 1);
+		}
+		$('#numberCasier').val(RandomString);
+
+	});
 	
-	$('#connect').on('submit', function(e){
-		
-		let hasErrors = false;
-		let $email  = $('#inputEmail3'),
-			$red    = 'style=" color : white;padding-left: 10px;  background-color: tomato; border : 1px solid tomato" '; 
+	
+	
+	
 
-		if(!validateEmail($email.val())){
-			// je supprime la derniere notification 
-			$email.next().remove(); 
-			// si l'elelement suivant le input a la classe invalid 
-			// si invalide alors je ne le réaffiche pas 
-												
-			if (!$email.next().hasClass('invalid')){
-				$('<div class="invalid" '+ $red +'> L\'adresse mail n\'est pas correcte </div>').appendTo($email.parent());
-			}
-			
-			hasErrors = true;
-		}
-		
-   			
-
-		if(!hasErrors){
-			return true;
-		} else {
-			return false;
-		}
-	});
-
-	$('#menu-connect').slideUp(400)
-	$('#button-connect').click(function(){
-		$('#menu-connect').slideToggle('slow');
-	})
-/*
-	$( "input:checked" ).on('change', function(){
-		console.log($(this).val());
-	});
-*/
-	$('#connect input').on('change', function() {
-		let $change = $('input[name=gridRadios]:checked', '#connect').val(); 
-
-		if($change === 'option1'){
-			console.log('salut');
-			$('#btn-connect').text('S\'inscrire');
-			$('#stayConnect').hide();
-			$('form').attr('action','index.php?id=6');
-			// $('form').attr('method','GET');
-			$('#inputPassword3').attr('readonly',true);
-		}else if($change === 'option2'){
-			console.log('bonjour');
-			$('#stayConnect').show();
-			$('#btn-connect').text('Connexion');
-			$('form').attr('action','index.php?id=100');
-			$('#inputPassword3').attr('readonly',false);
-			
-		}
-	 });
+	
 	
 
 

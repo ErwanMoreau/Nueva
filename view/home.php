@@ -1,14 +1,16 @@
 <?php
+if( !isset($_SESSION['acces'])){
+  header('Location: index.php?id=1');
+}
   require './app/bdd.php';
 ?>
 <div class="container-fluid mt-5">
   <div class="row">
-  <?php
-    $rapport = $connexion->prepare('SELECT * FROM rapport WHERE isDelete= 0 LIMIT 5');
-    $rapport->execute();
-    $resusltatRapport = $rapport->fetchAll(PDO::FETCH_ASSOC);
-    var_dump($resusltatRapport); 
-  ?>
+    <?php
+      $rapport = $connexion->prepare('SELECT * FROM rapport WHERE isDelete= 0 LIMIT 5');
+      $rapport->execute();
+      $resusltatRapport = $rapport->fetchAll(PDO::FETCH_ASSOC);
+    ?>
   <!-- Last Rapport -->
     <div class="col-md-6">
       <div class="row">
@@ -35,7 +37,7 @@
                   <?php 
                   foreach ($resusltatRapport as $key):?>
                   <tr>
-                    <td scope="row"><?= $key['contenue'] ?></td>
+                    <td scope="row"><?= $key['title'] ?></td>
                     <td>
                       <a href="index.php?id=11&id_rapport=<?= $key['id'] ?>" class="btn btn-primary customBtnDash">Voir +</a>
                     </td>
@@ -49,11 +51,11 @@
       </div>
     </div>
     <!--  General Informations -->
-  <?php 
-    $info = $connexion->prepare('SELECT * FROM information WHERE isDelete = 0 LIMIT 5');
-    $info->execute();
-    $resultatInfo = $info->fetchAll(PDO::FETCH_ASSOC);
-  ?>
+    <?php 
+      $info = $connexion->prepare('SELECT * FROM information WHERE isDelete = 0 LIMIT 5');
+      $info->execute();
+      $resultatInfo = $info->fetchAll(PDO::FETCH_ASSOC);
+    ?>
     <!--  -->
     <div class="col-md-6">
       <div class="row">
@@ -153,6 +155,13 @@
       </div>
     </div>
   </div>
+
+  <?php 
+    $freq = $connexion->prepare('SELECT * FROM frequence');
+    $freq->execute();
+    $resultatFreq = $freq->fetch(PDO::FETCH_ASSOC);
+
+  ?>
   <!-- Generate Frequencie -->
   <div class="row mt-5">
     <div class="col-md-6 offset-md-3">
@@ -169,40 +178,45 @@
             </div>
             <div class="card-body">
               <div class="row mt-5 mb-4">
+                  <div class="col-md-6 customTAC">
+                    <form action="index.php?id=122" method="POST"> 
+                        <div class="row">
+                          <div class="col-md-12">
+                            <h1 class="customTitleBis">fréquence Courte</h1>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-12">
+                            <p class="customCount"><?= $resultatFreq['freqCourte'] ?></p>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-12">
+                              <button name="freqC" type="submit" id="frequenceC" class="btn btn-primary">Nouvelle Fréquence</button>
+                          </div>
+                        </div>
+                    </form>
+                  </div>
                 <div class="col-md-6 customTAC">
-                  <div class="row">
-                    <div class="col-md-12">
-                      <h1 class="customTitleBis">fréquence Courte</h1>
+                  <form action="index.php?id=123" method="POST">  
+                    <div class="row">
+                      <div class="col-md-12">
+                        <h1 class="customTitleBis">fréquence longue</h1>
+                      </div>
                     </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12">
-                      <p class="customCount">{{ freqC }}</p>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="customCount"><?= $resultatFreq['freqLongue'] ?></p>
+                      </div>
                     </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12">
-                        <button class="btn btn-primary" (click)="RadioCourte()">Nouvelle Fréquence</button>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <button class="btn btn-primary" (click)="RadioLongue()">Nouvelle Fréquence</button>
+                      </div>
                     </div>
-                  </div>
+                  </form>
                 </div>
-                <div class="col-md-6 customTAC">
-                  <div class="row">
-                    <div class="col-md-12">
-                      <h1 class="customTitleBis">fréquence longue</h1>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12">
-                      <p class="customCount">{{ freqL }}</p>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12">
-                      <button class="btn btn-primary" (click)="RadioLongue()">Nouvelle Fréquence</button>
-                    </div>
-                  </div>
-                </div>
+
               </div>
             </div>
           </div>
