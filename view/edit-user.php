@@ -7,7 +7,9 @@ require './app/bdd.php';
     $grade->execute();
     $resultat = $grade->fetchAll(PDO::FETCH_ASSOC);
 
-    $user = $connexion->prepare('SELECT * FROM user');
+    $id = $_GET['id_user'];
+    $user = $connexion->prepare('SELECT * FROM user WHERE id= :id ');
+    $user->bindValue(':id', $id , PDO::PARAM_INT);
     $user->execute();
     $resultatUser = $user->fetch(PDO::FETCH_ASSOC);
 
@@ -18,7 +20,7 @@ require './app/bdd.php';
             <div class="card-header">
                 <div class="row mb-2">
                     <div class="col-md-12">
-                        <h1 class="customTitleAdd">Ajouter un policier</h1>
+                        <h1 class="customTitleAdd">Modifier le profile </h1>
                     </div>
                 </div>
                 <div class="row">
