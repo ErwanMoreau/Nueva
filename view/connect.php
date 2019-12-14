@@ -1,3 +1,9 @@
+<?php
+if( isset($_SESSION['acces'])){
+    header('Location: index.php?id=3');
+}
+?>
+
 <div class="container h-100 mt-5">
   <div class="d-flex justify-content-center h-100">
     <div class="user_card customPos">

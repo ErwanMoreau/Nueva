@@ -2,15 +2,26 @@
 if( !isset($_SESSION['acces'])){
   header('Location: index.php?id=1');
 }
+
+
   require './app/bdd.php';
-?>
+ ?>
 <div class="container-fluid mt-5">
   <div class="row">
+
     <?php
       $rapport = $connexion->prepare('SELECT * FROM rapport WHERE isDelete= 0 LIMIT 5');
       $rapport->execute();
       $resusltatRapport = $rapport->fetchAll(PDO::FETCH_ASSOC);
     ?>
+
+  <?php
+    $rapport = $connexion->prepare('SELECT * FROM rapport WHERE isDelete= 0 LIMIT 5');
+    $rapport->execute();
+    $resusltatRapport = $rapport->fetchAll(PDO::FETCH_ASSOC);
+
+  ?>
+
   <!-- Last Rapport -->
     <div class="col-md-6">
       <div class="row">
@@ -55,6 +66,7 @@ if( !isset($_SESSION['acces'])){
       $info = $connexion->prepare('SELECT * FROM information WHERE isDelete = 0 LIMIT 5');
       $info->execute();
       $resultatInfo = $info->fetchAll(PDO::FETCH_ASSOC);
+//      var_dump($resultatInfo);
     ?>
     <!--  -->
     <div class="col-md-6">
@@ -92,7 +104,7 @@ if( !isset($_SESSION['acces'])){
                 </thead>
                 <tbody>
                   <?php 
-                  $num = 0;
+
                     foreach($resultatInfo as $key ):
                   ?>
                   <tr>

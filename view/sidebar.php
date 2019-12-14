@@ -1,8 +1,8 @@
 <?php 
 
 require './app/bdd.php';
-// $id= $_SESSION['acces']['id_user']
-$id= 6;
+ $id= $_SESSION['acces']['id_user'];
+
 $sql = $connexion->prepare('SELECT * FROM user, grade Where user.id_grade= grade.id AND user.id= :id');
 $sql->bindValue(':id', $id, PDO::PARAM_INT);
 $sql->execute();
@@ -32,12 +32,17 @@ $resultat= $sql->fetch(PDO::FETCH_ASSOC);
         <!--Matricules-->
         <h1 class="customH1"><?= $resultat['matricule'] ?></h1>
       </div>
+        <div class="col-md-12 customTAC mt-3">
+            <!--Matricules-->
+            <a href="index.php?id=126" class="btn btn-danger">Deconnexion</a>
+        </div>
     </div>
     <!--Divider-->
     <div class="row mb-3 mt-3">
       <hr class="customDivider">
     </div>
     <!--Link Profil Edit-->
+    <?php if(isset($_SESSION['acces+'])): ?>
     <div class="row mt-2">
       <div class="col-md-2 offset-md-2">
         <svg class="customColorSvg " height="30px" width="30px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -88,14 +93,15 @@ $resultat= $sql->fetch(PDO::FETCH_ASSOC);
           </svg>
       </div>
       <div class="col-md-7 mt-1">
-        <h1 [routerLink]="['/admin/edit-user']" class="customLink customH1Bis"> Profil</h1>
+        <a href="index.php?id=5" class="customLink customH1Bis"> Admin</a>
       </div>
     </div>
-    
-    <!--Divider-->
+
+
     <div class="row mb-5 mt-3">
       <hr class="customDivider">
     </div>
+      <?php endif;?>
     <!--Link Casier-->
     <div class="row">
       <div class="col-md-2 offset-md-2">

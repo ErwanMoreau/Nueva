@@ -1,4 +1,5 @@
-<?php  if( !isset($_SESSION['acces+'])){
+<?php
+if( !isset($_SESSION['acces'])){
     header('Location: index.php?id=1');
 }
     require './app/bdd.php';

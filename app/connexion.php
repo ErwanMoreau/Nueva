@@ -26,7 +26,7 @@ if(isset($_POST) && !empty($_POST)){
         if(!empty($user)){
             $_SESSION['acces'] = $array_cont = ['id_user' => $user['id'], 'nom' => $user['nom'],'prenom' => $user['prenom']];
             
-                if($user['id_grade'] === '1'){
+                if($user['id_grade'] >= '5'){
                     $_SESSION['acces+'] = true;
                 }
             header('Location: index.php?id=3');

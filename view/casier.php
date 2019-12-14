@@ -1,4 +1,7 @@
 <?php
+if( !isset($_SESSION['acces'])){
+    header('Location: index.php?id=1');
+}
     require './app/bdd.php';
 
     $id= $_GET['id_casier'];
@@ -12,6 +15,20 @@
     $Code->bindValue(':id', $id, PDO::PARAM_INT);
     $Code->bindValue(':id_type', 1, PDO::PARAM_INT);
 
+    $penal = $connexion->prepare('SELECT infractions.total, amende.label FROM infractions, amende,casier where infractions.id_amende = amende.id AND infractions.id_casier = casier.id AND amende.id_category = 1 AND infractions.id_casier = :id');
+    $penal->bindValue(':id', $id, PDO::PARAM_INT);
+    $penal->execute();
+    $resultatPenal = $penal->fetchAll(PDO::FETCH_ASSOC);
+
+    $justice = $connexion->prepare('SELECT infractions.total, amende.label FROM infractions, amende,casier where infractions.id_amende = amende.id AND infractions.id_casier = casier.id AND amende.id_category = 2 AND infractions.id_casier = :id');
+    $justice->bindValue(':id', $id, PDO::PARAM_INT);
+    $justice->execute();
+    $resultatJustice = $justice->fetchAll(PDO::FETCH_ASSOC);
+
+    $route = $connexion->prepare('SELECT infractions.total, amende.label FROM infractions, amende,casier where infractions.id_amende = amende.id AND infractions.id_casier = casier.id AND amende.id_category = 3 AND infractions.id_casier = :id');
+    $route->bindValue(':id', $id, PDO::PARAM_INT);
+    $route->execute();
+    $resultatRoute = $route->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <div class="container mt-5 mb-5">
   <div class="card">
@@ -77,25 +94,18 @@
         <div class="col-md-12">
           <div class="row">
             <div class="col-md-12">
-              <h1 class="customTitleCard">Délits</h1>
+              <h1 class="customTitleCard">Code Pénal</h1>
             </div>
           </div>
           <div class="card">
             <div class="card-body">
               <div class="col-md-12">
                 <ul class="list-group">
-                  <li class="list-group-item d-flex justify-content-between align-items-center">Lorem, ipsum dolor  consectetur adipisicing elit.
-                    <span class="badge badge-primary badge-pill">4</span>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center">Lorem, ipsum dolor  consectetur adipisicing elit.
-                    <span class="badge badge-primary badge-pill">1</span>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center">Lorem, ipsum dolor  consectetur adipisicing elit.
-                    <span class="badge badge-primary badge-pill">2</span>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center">Lorem, ipsum dolor  consectetur adipisicing elit.
-                    <span class="badge badge-primary badge-pill">1</span>
-                  </li>
+                    <?php foreach ($resultatPenal as $key): ?>
+                      <li class="list-group-item d-flex justify-content-between align-items-center"><?= $key['label']?>
+                        <span class="badge badge-primary badge-pill"><?= $key['total']?></span>
+                      </li>
+                    <?php endforeach; ?>
                 </ul>
               </div>
             </div>
@@ -104,25 +114,18 @@
         <div class="col-md-12 mt-4">
           <div class="row">
             <div class="col-md-12">
-              <h1 class="customTitleCard">Crimes</h1>
+              <h1 class="customTitleCard">Code de justice administrative</h1>
             </div>
           </div>
           <div class="card">
             <div class="card-body">
               <div class="col-md-12">
                 <ul class="list-group">
-                  <li class="list-group-item d-flex justify-content-between align-items-center">Lorem, ipsum dolor  consectetur adipisicing elit.
-                    <span class="badge badge-primary badge-pill">4</span>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center">Lorem, ipsum dolor  consectetur adipisicing elit.
-                    <span class="badge badge-primary badge-pill">1</span>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center">Lorem, ipsum dolor  consectetur adipisicing elit.
-                    <span class="badge badge-primary badge-pill">2</span>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center">Lorem, ipsum dolor  consectetur adipisicing elit.
-                    <span class="badge badge-primary badge-pill">1</span>
-                  </li>
+                    <?php foreach ($resultatJustice as $key): ?>
+                        <li class="list-group-item d-flex justify-content-between align-items-center"><?= $key['label']?>
+                            <span class="badge badge-primary badge-pill"><?= $key['total']?></span>
+                        </li>
+                    <?php endforeach; ?>
                 </ul>
               </div>
             </div>
@@ -131,7 +134,7 @@
       </div>
       <div class="row mt-4">
         <div class="col-md-12">
-          <h1 class="customTitleCard"> Infractions au code de la Route:</h1>
+          <h1 class="customTitleCard">Code de la Route:</h1>
         </div>
         <!-- Infraction Code de la Route -->
         <div class="col-md-6">
@@ -139,18 +142,11 @@
             <div class="card-body">
               <div class="col-md-12">
                 <ul class="list-group">
-                  <li class="list-group-item d-flex justify-content-between align-items-center">Exces de Vitesse +40km/h
-                    <span class="badge badge-primary badge-pill">4</span>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center">desctuction de bien publique
-                    <span class="badge badge-primary badge-pill">1</span>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center">Exces de Vitesse +40km/h
-                    <span class="badge badge-primary badge-pill">2</span>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center">Exces de Vitesse +80km/h
-                    <span class="badge badge-primary badge-pill">1</span>
-                  </li>
+                    <?php foreach ($resultatRoute as $key): ?>
+                        <li class="list-group-item d-flex justify-content-between align-items-center"><?= $key['label']?>
+                            <span class="badge badge-primary badge-pill"><?= $key['total']?></span>
+                        </li>
+                    <?php endforeach; ?>
                 </ul>
               </div>
             </div>
@@ -158,40 +154,53 @@
         </div>
       </div>
     </div>
+<?php
+$code = $connexion->prepare('SELECT * FROM amende WHERE id_category = 3');
+$code->execute();
+$resultatCode = $code->fetchAll(PDO::FETCH_ASSOC);
+
+$justice = $connexion->prepare('SELECT * FROM amende WHERE id_category = 2');
+$justice->execute();
+$resultatJustice = $justice->fetchAll(PDO::FETCH_ASSOC);
+
+$Pénal = $connexion->prepare('SELECT * FROM amende WHERE id_category = 1');
+$Pénal->execute();
+$resultatPénal = $Pénal->fetchAll(PDO::FETCH_ASSOC);
+?>
     <div class="footer">
-      <form action="">
+      <form action="index.php?id=108" method="post">
         <div class="card">
           <div class="card-footer">
             <div class="row mt-4">
-              <div class="col-md-6">
+              <div class="col-md-12">
                 <div class="input-group mb-3">
                   <div class="input-group-prepend">
                     <label class="input-group-text" for="inputGroupSelect01">Type d'infractions</label>
                   </div>
-                  <select class="custom-select" id="inputGroupSelect01">
+                  <select class="custom-select" name="infraction" id="inputGroupSelect01">
                     <option selected>Choose...</option>
-                    <option value="1">Infractions Code de la route</option>
-                    <option value="2">Délits</option>
-                    <option value="3">Crimes</option>
-                  </select>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <label class="input-group-text" for="inputGroupSelect01">Infractions</label>
-                  </div>
-                  <select class="custom-select" id="inputGroupSelect01">
-                    <option selected>Choose...</option>
-                    <option value="1">Exces de Vitesse +40km/h</option>
-                    <option value="2">Exces de Vitesse +60km/h</option>
-                    <option value="3">Exces de Vitesse +80km/h</option>
+                      <optgroup label="Code de la route ">
+                        <?php foreach ($resultatCode as $key): ?>
+                            <option value="<?= $key['id'] ?>"><?= $key['label'] ?></option>
+                          <?php endforeach ?>
+                      </optgroup>
+                      <optgroup label="Code de justice administrative">
+                          <?php foreach ($resultatJustice as $key): ?>
+                          <option value="<?= $key['id'] ?>"><?= $key['label'] ?></option>
+                          <?php endforeach ?>
+                      </optgroup>
+                      <optgroup label="Code Pénal">
+                          <?php foreach ($resultatPénal as $key): ?>
+                          <option value="<?= $key['id'] ?>"><?= $key['label'] ?></option>
+                          <?php endforeach ?>
+                      </optgroup>
                   </select>
                 </div>
               </div>
             </div>
             <div class="row">
               <div class="col-md-12 customTAR">
+                  <input type="hidden" name="id_casier" value="<?= $_GET['id_casier'] ?>">
                 <button type="submit" class="btn btn-primary">Ajouter l'infraction</button>
               </div>
             </div>

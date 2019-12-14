@@ -1,4 +1,7 @@
-<?php 
+<?php
+if( !isset($_SESSION['acces'])){
+    header('Location: index.php?id=1');
+}
     require './app/bdd.php';
 
     $sql = $connexion->prepare('SELECT * FROM casier');
@@ -20,14 +23,18 @@
     </tr>
   </thead>
   <tbody>
-      <?php foreach ($resultat as $key):?>
+      <?php
+        $numb = 1;
+      foreach ($resultat as $key):?>
     <tr>
-        <th scope="row">1</th>
+        <th scope="row"><?=$numb;?></th>
         <td><?= $key['nom'] ?></td>
         <td><?= $key['prenom'] ?></td>
         <td><?= $key['numero_de_casier'] ?></td>
         <td><a href="index.php?id=9&id_casier=<?= $key['id'] ?>" class="btn btn-primary customBtnBis"> Voir le Casier Judiciaire</a></td>
     </tr>
-    <?php endforeach ?>
+    <?php
+        $numb++;
+      endforeach ?>
   </tbody>
 </table>

@@ -74,10 +74,10 @@ try {
     $mail->isSMTP();                                            // Send using SMTP
     $mail->Host       = 'smtp.mailtrap.io';                    // Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-    $mail->Username   = '0d5ceabf5151c1';                     // SMTP username
-    $mail->Password   = 'a243ad38a72e1f';                               // SMTP password
+    $mail->Username   = '77f3cc77bbbd6b';                     // SMTP username
+    $mail->Password   = '60dc71225970d0';                               // SMTP password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
-    $mail->Port       = 587;                                    // TCP port to connect to
+    $mail->Port       = 2525;                                    // TCP port to connect to
 
     //Recipients
     $mail->setFrom('no-reply@agorapolis.fr', 'Joe bacon');
@@ -102,10 +102,10 @@ try {
 }
 
 
-        // header('Location: index.php?id=5');
+         header('Location: index.php?id=5');
         
     } else {
-        // header('Location: index.php?id=5');
+         header('Location: index.php?id=5');
     }
 
 }

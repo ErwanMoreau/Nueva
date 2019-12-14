@@ -1,3 +1,8 @@
+<?php
+if( !isset($_SESSION['acces'])){
+    header('Location: index.php?id=1');
+}
+?>
 <div class="container-fluid mt-5">
   <div class="container">
     <form action="index.php?id=105" method="POST">

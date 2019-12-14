@@ -1,9 +1,9 @@
 <?php
  if( !isset($_SESSION['acces'])){
-     header('Location: index.php?id=1&error=3');
+     header('Location: index.php?id=1');
 }
     require './app/bdd.php';
-    $grade = $connexion->prepare('SELECT * FROM user, grade where user.id_grade = grade.id ORDER BY id_grade ASC');
+    $grade = $connexion->prepare('SELECT * FROM user, grade where user.id_grade = grade.id ORDER BY id_grade DESC');
     $grade->execute();
     $resultat = $grade->fetchAll(PDO::FETCH_ASSOC);
 
@@ -44,7 +44,7 @@
               <td scope="col"><?= $key['nom'] ?></td>
               <td scope="col"><?= $key['prenom'] ?></td>
               <td>
-                <a href="index.php?id=6&id_user=<?= $key['id'] ?>">
+                <a href="index.php?id=23&id_user=<?= $key['id'] ?>">
                   <svg width="30px" height="30px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 528.899 528.899" style="enable-background:new 0 0 528.899 528.899;" xml:space="preserve">
                     <g>
                         <path d="M328.883,89.125l107.59,107.589l-272.34,272.34L56.604,361.465L328.883,89.125z M518.113,63.177l-47.981-47.981

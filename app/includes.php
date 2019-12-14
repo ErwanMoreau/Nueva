@@ -22,7 +22,7 @@ require 'toolbox.inc.php';
     $arr_content[ 13 ] = 'edit-rapport';
     $arr_content[ 14 ] = 'list-rapport';
 
-    $arr_content[ 15 ] = 'amende';
+    $arr_content[ 15 ] = 'amendes';
     $arr_content[ 16 ] = 'add-amende';
     $arr_content[ 17 ] = 'edit-amende';
 
@@ -30,8 +30,11 @@ require 'toolbox.inc.php';
     $arr_content[ 19 ] = 'add-dossier';
     $arr_content[ 20 ] = 'edit-dossier';
     $arr_content[ 21 ] = 'list-dossier';
+
     $arr_content[ 22 ] = 'list-casier';
-    $arr_content[ 23 ] = '';
+
+    $arr_content[ 23 ] = 'edit-user';
+    $arr_content[ 24 ] = 'new-password';
     
 
     // Back page
@@ -67,6 +70,12 @@ require 'toolbox.inc.php';
 
     $arr_content[ 122 ] = 'edit-freq-courte';
     $arr_content[ 123 ] = 'edit-freq-longue';
+
+    $arr_content[ 124 ] = 'new-password';
+    $arr_content[ 125 ] = 'new-password-mail';
+
+    $arr_content[ 126 ] = 'deconnexion';
+
 
 
 

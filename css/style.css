@@ -255,5 +255,50 @@
    font-family: 'Source Code Pro', monospace;
    text-decoration: underline;
    font-weight: bold;
-
  }
+ .arrestation{
+    color: white;
+     background-color: #dc3545;
+     border-color: #dc3545;
+ }
+ .rapportDeMission{
+     color: white;
+     background-color: #28a745;
+     border-color: #28a745;
+ }
+ .interrogatoire{
+     color: white;
+     background-color: #007bff;
+     border-color: #007bff;
+ }
+ .perquisition{
+     color: white;
+     background-color: #17a2b8;
+     border-color: #17a2b8;
+ }
+/* ------------------------------------------------------------------------------------------- */
+
+/*  casier  */
+
+/* ------------------------------------------------------------------------------------------- */
+.customBtnBisPos{
+    position: absolute;
+    top: 28px;
+    right: 2px;
+}
+.customReset{
+    font-size: 0.8rem;
+    color: #007bff;
+    text-decoration: underline;
+}
+.customReset:hover{
+    font-size: 0.8rem;
+    color: lightblue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.customBtnPos{
+    position: absolute;
+    top: 10px;
+    left: 250px;
+}

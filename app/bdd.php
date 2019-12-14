@@ -3,7 +3,7 @@
 // nous utiliserons aussi les gestionaire d'erreur 
 
 
-$dbname   = 'base';
+$dbname   = 'pannel';
 $username = 'root';
 $password = '';
 
