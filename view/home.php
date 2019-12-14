@@ -77,7 +77,7 @@ if( !isset($_SESSION['acces'])){
             <div class="card-header">
               <div class="row">
                 <div class="col-md-12 customTAC">
-                  <h1 class="customTitle">Information Générales</h1>
+                  <h1 class="customTitle">Informations Générales</h1>
                 </div>
                 <div class="col-md-12">
                   <form action="index.php?id=117" method="POST">
