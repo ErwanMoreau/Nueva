@@ -99,7 +99,7 @@ require './app/bdd.php';
             <div class="card-footer">
                 <div class="row">
                     <div class="col-md-12 customTAR">
-                        <button class="btn btn-primary">Ajouter un utilisateur</button>
+                        <button class="btn btn-primary">modifier l'utilisateur</button>
                     </div>
                 </div>
             </div>

@@ -26,16 +26,18 @@ require './app/bdd.php';
         </tr>
     </thead>
     <tbody>
-    <?php foreach ($resultatCode as $key):?>
+    <?php
+    $numb = 1;
+    foreach ($resultatCode as $key):?>
         <tr>
-            <th scope="row">1</th>
+            <th scope="row"><?=$numb?></th>
             <td><?= $key['label'] ?></td>
             <td><?= $key['classification'] ?></td>
             <td><?= $key['sanction'] ?></td>
             <td><?= $key['fichierPolice'] ?></td>
             <td><?= $key['CasierJudiciaire'] ?></td>
         </tr>
-    <?php endforeach ?>
+    <?php $numb++; endforeach ?>
 
     </tbody>
 </table>
@@ -62,16 +64,18 @@ require './app/bdd.php';
     </tr>
     </thead>
     <tbody>
-    <?php foreach ($resultatJustice as $key):?>
+    <?php
+    $numb1 = 1;
+    foreach ($resultatJustice as $key):?>
         <tr>
-            <th scope="row">1</th>
+            <th scope="row"><?=$numb1?></th>
             <td><?= $key['label'] ?></td>
             <td><?= $key['classification'] ?></td>
             <td><?= $key['sanction'] ?></td>
             <td><?= $key['fichierPolice'] ?></td>
             <td><?= $key['CasierJudiciaire'] ?></td>
         </tr>
-    <?php endforeach ?>
+    <?php $numb1++;  endforeach ?>
 
     </tbody>
 </table>
@@ -98,16 +102,18 @@ require './app/bdd.php';
     </tr>
     </thead>
     <tbody>
-    <?php foreach ($resultatPénal as $key):?>
+    <?php
+    $numb2 = 1;
+    foreach ($resultatPénal as $key):?>
         <tr>
-            <th scope="row">1</th>
+            <th scope="row"><?=$numb2?></th>
             <td><?= $key['label'] ?></td>
             <td><?= $key['classification'] ?></td>
             <td><?= $key['sanction'] ?></td>
             <td><?= $key['fichierPolice'] ?></td>
             <td><?= $key['CasierJudiciaire'] ?></td>
         </tr>
-    <?php endforeach ?>
+    <?php $numb2++; endforeach ?>
 
     </tbody>
 </table>
