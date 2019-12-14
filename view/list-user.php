@@ -3,7 +3,7 @@
      header('Location: index.php?id=1');
 }
     require './app/bdd.php';
-    $grade = $connexion->prepare('SELECT * FROM user, grade where user.id_grade = grade.id ORDER BY id_grade DESC');
+    $grade = $connexion->prepare('SELECT user.id,user.matricule, user.nom,user.prenom, grade.label FROM user, grade where user.id_grade = grade.id ORDER BY id_grade DESC');
     $grade->execute();
     $resultat = $grade->fetchAll(PDO::FETCH_ASSOC);
 
