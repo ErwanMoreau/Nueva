@@ -3,9 +3,9 @@
 // nous utiliserons aussi les gestionaire d'erreur 
 
 
-$dbname   = 'pannel';
-$username = 'root';
-$password = '';
+$dbname   = 'police_malden';
+$username = 'police_root';
+$password = 'fPz9g5_6';
 
 try {
 
