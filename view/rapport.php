@@ -5,11 +5,10 @@ if( !isset($_SESSION['acces'])){
     require './app/bdd.php';
 
     $id_rapport = $_GET['id_rapport'];
-    $sql = $connexion->prepare('SELECT rapport.id,rapport.id_user, rapport.title, rapport.contenue, rapport.create_at, user.nom, type.label, type.class FROM rapport, user, type where rapport.id= :id_rapport AND rapport.id_user = user.id AND rapport.id_type = type.id');
+    $sql = $connexion->prepare('SELECT rapport.id,rapport.id_user, rapport.title, rapport.contenue,  user.nom, type.label, type.class FROM rapport, user, type where rapport.id= :id_rapport AND rapport.id_user = user.id AND rapport.id_type = type.id');
     $sql->bindValue(':id_rapport', $id_rapport,PDO::PARAM_INT);
     $sql->execute();
     $resultat = $sql->fetch(PDO::FETCH_ASSOC);
-
 
 ?>
 
@@ -35,7 +34,7 @@ if( !isset($_SESSION['acces'])){
                 <div class="card-footer">
                     <div class="row">
                         <div class="col-md-4">
-                            <span>Ecrit par : <?= $resultat['nom'] ?> le <?= $resultat['create_at'] ?></span>
+                            <span>Ecrit par : <?= $resultat['nom'] ?> </span>
                             <!-- <span>Ecrit par: Agent Palacio le 12/12/2019 à 19:53</span> -->
                         </div>
                         <?php if($_SESSION['acces']['id_user'] === $resultat['id_user']):?>

@@ -7,6 +7,10 @@ $dbname   = 'police_malden';
 $username = 'police_root';
 $password = 'fPz9g5_6';
 
+//$dbname   = 'pannel';
+//$username = 'root';
+//$password = '';
+
 try {
 
   

@@ -77,12 +77,12 @@ if( !isset($_SESSION['acces'])){
             <div class="card-header">
               <div class="row">
                 <div class="col-md-12 customTAC">
-                  <h1 class="customTitle">Informations Général</h1>
+                  <h1 class="customTitle">Information Générales</h1>
                 </div>
                 <div class="col-md-12">
                   <form action="index.php?id=117" method="POST">
                     <div class="col-md-12">
-                      <p >Ajouter une informations(lieux illégale, etc..)</p>
+                      <p >Ajouter une information (lieux illégaux, etc..)</p>
                     </div>
                     <div class="input-group mb-3">
                       <input type="text" name="information" class="form-control" placeholder="point suspect" >
@@ -99,7 +99,7 @@ if( !isset($_SESSION['acces'])){
               <table class="table table-striped">
                 <thead>
                   <tr>
-                    <th scope="col">Information général</th>
+                    <th scope="col">Informations générales</th>
                   </tr>
                 </thead>
                 <tbody>

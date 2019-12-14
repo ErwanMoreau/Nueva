@@ -10,7 +10,7 @@ if( !isset($_SESSION['acces'])){
 
 ?>
 <a href="index.php?id=12" class="btn btn-primary customBtnBisPos"> ajouter rapport</a>
-<table class="table mt-4 ">
+<table class="table mt-4">
   <thead class="thead">
   <tr>
     <th scope="col">#</th>
