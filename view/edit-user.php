@@ -15,7 +15,7 @@ require './app/bdd.php';
 
 ?>
 <div class="container mt-5">
-    <form action="index.php?id=102" method="POST" id="addUser">
+    <form action="index.php?id=103" method="POST" id="addUser">
         <div class="card">
             <div class="card-header">
                 <div class="row mb-2">
@@ -94,6 +94,7 @@ require './app/bdd.php';
                 </div>
                 <div class="row">
                     <div class="col-md-12 customTAR">
+                        <input type="hidden" value="<?= $id ?>" name="id_user">
                         <a href="index.php?id=125&id_user=<?= $resultatUser['id'] ?>" class="customReset">new password</a>
                     </div>
                 </div>
