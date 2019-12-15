@@ -1,10 +1,10 @@
 <?php 
 session_start();
 ob_start();
-     if(isset($_COOKIE['rememberme'])){
-         $tab_cookies = unserialize($_COOKIE['rememberme']);
+     if(isset($_COOKIE['AlreadyConnect'])){
+         $tab_cookies = unserialize($_COOKIE['AlreadyConnect']);
          require 'app/bdd.php';
-         $sql = $connexion->prepare('SELECT * FROM blog_user WHERE email=:email AND token=:token');
+         $sql = $connexion->prepare('SELECT * FROM user WHERE email=:email AND token=:token');
          $sql->bindvalue(':email', $tab_cookies['email'],PDO::PARAM_STR);
          $sql->bindvalue(':token', $tab_cookies['token'],PDO::PARAM_STR);
          $sql->execute();
@@ -12,7 +12,7 @@ ob_start();
          $user_cookie= $sql->fetch();
 
          if(!empty($user_cookie)){
-             $_SESSION['acces'] = $array_cont = ['nom' => $user_cookie['nom'],'id_user' => $user_cookie['id']];
+             $_SESSION['acces'] = $array_cont = ['id_user' => $user_cookie['id'],'nom' => $user_cookie['nom'],'prenom' => $user_cookie['prenom']];
             
                   if($user_cookie['id_grade'] >= '5'){
                       $_SESSION['acces+'] = true;
