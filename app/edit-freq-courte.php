@@ -1,7 +1,7 @@
 <?php
 
 require 'bdd.php';
-$freqC = strval(rand(30,512));
+$freqC = strval(rand(30,75));
 $freqBis = strval(rand(0,9));
 
 $modif = date('d-m-Y H:i');

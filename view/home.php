@@ -194,7 +194,7 @@ if( !isset($_SESSION['acces'])){
                     <form action="index.php?id=122" method="POST"> 
                         <div class="row">
                           <div class="col-md-12">
-                            <h1 class="customTitleBis">fréquence </h1>
+                            <h1 class="customTitleBis">fréquence</h1>
                           </div>
                         </div>
                         <div class="row">
