@@ -16,7 +16,7 @@ if( !isset($_SESSION['acces'])){
     ?>
 
   <?php
-    $rapport = $connexion->prepare('SELECT * FROM rapport WHERE isDelete= 0 LIMIT 5');
+    $rapport = $connexion->prepare('SELECT * FROM rapport WHERE isDelete= 0 LIMIT 6');
     $rapport->execute();
     $resusltatRapport = $rapport->fetchAll(PDO::FETCH_ASSOC);
 
@@ -190,16 +190,20 @@ if( !isset($_SESSION['acces'])){
             </div>
             <div class="card-body">
               <div class="row mt-5 mb-4">
-                  <div class="col-md-6 customTAC">
+                  <div class="col-md-12 customTAC">
                     <form action="index.php?id=122" method="POST"> 
                         <div class="row">
                           <div class="col-md-12">
-                            <h1 class="customTitleBis">fréquence Courte</h1>
+                            <h1 class="customTitleBis">fréquence </h1>
                           </div>
                         </div>
                         <div class="row">
                           <div class="col-md-12">
                             <p class="customCount"><?= $resultatFreq['freqCourte'] ?></p>
+                          </div>
+                          <div class="col-md-12">
+                            <!-- <h3 class="customDate">edité à <?php  //echo $resultatFreq['date'] ?>  </h3> -->
+                            
                           </div>
                         </div>
                         <div class="row">
@@ -209,26 +213,6 @@ if( !isset($_SESSION['acces'])){
                         </div>
                     </form>
                   </div>
-                <div class="col-md-6 customTAC">
-                  <form action="index.php?id=123" method="POST">  
-                    <div class="row">
-                      <div class="col-md-12">
-                        <h1 class="customTitleBis">fréquence longue</h1>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-12">
-                        <p class="customCount"><?= $resultatFreq['freqLongue'] ?></p>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-12">
-                        <button class="btn btn-primary" (click)="RadioLongue()">Nouvelle Fréquence</button>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-
               </div>
             </div>
           </div>

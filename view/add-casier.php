@@ -3,6 +3,9 @@ if( !isset($_SESSION['acces'])){
     header('Location: index.php?id=1');
 }
 ?>
+ <script type="text/javascript">
+    bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
+  </script>
 <div class="container-fluid mt-5">
   <div class="container">
     <form action="index.php?id=105" method="POST">
@@ -53,9 +56,9 @@ if( !isset($_SESSION['acces'])){
           </div>
           <div class="row mt-5">
             <div class="col-md-12 ">
-              <div class="trumbowyg">
-                <div id="editor"></div>
-              </div>
+              <textarea name="editor"  style="min-width: 100%!important; min-height: 300px;">
+                
+              </textarea><br />
             </div>
           </div>
         </div>

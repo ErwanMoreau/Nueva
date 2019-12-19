@@ -8,6 +8,9 @@ if( !isset($_SESSION['acces'])){
     $sql->execute();
     $resultat = $sql->fetchAll(PDO::FETCH_ASSOC);
 ?>
+ <script type="text/javascript">
+    bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
+  </script>
 <div class="container-fluid mt-3">
   <form action="index.php?id=119" method="POST">
     <div class="card">
@@ -43,9 +46,8 @@ if( !isset($_SESSION['acces'])){
         </div>
       </div>
       <div class="card-body">
-        <div class="trumbowyg">
-            <div id="editor"></div>
-        </div>
+      <textarea name="editor" style="width: 100%; min-height: 500px;">
+      </textarea><br />
       </div>
       <div class="card-footer">
         <div class="col-md-12">
@@ -56,3 +58,4 @@ if( !isset($_SESSION['acces'])){
     </div>
   </form>
 </div>
+

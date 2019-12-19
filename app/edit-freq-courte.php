@@ -4,6 +4,8 @@ require 'bdd.php';
 $freqC = strval(rand(30,512));
 $freqBis = strval(rand(0,9));
 
+$modif = date('d-m-Y H:i');
+
 
 $freq = (string)$freqC.'.'.$freqBis;
 $id = 1;

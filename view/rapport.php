@@ -35,12 +35,13 @@ if( !isset($_SESSION['acces'])){
                     <div class="row">
                         <div class="col-md-4">
                             <span>Ecrit par : <?= $resultat['nom'] ?> </span>
-                            <!-- <span>Ecrit par: Agent Palacio le 12/12/2019 à 19:53</span> -->
+                            <!-- <span>Ecrit par: <?php //echo  $resultat['nom'] ?> le <?php //echo $resultat['date'] ?></span> -->
                         </div>
                         <?php if($_SESSION['acces']['id_user'] === $resultat['id_user']):?>
 
                         <div class="col-md-8 customTAR">
-                            <a href="index.php?id=121&id_rapport=<?= $_GET['id_rapport'] ?>" class="btn btn-primary"> Supprimer le rapport</a>
+                            <a href="index.php?id=13&id_rapport=<?= $_GET['id_rapport'] ?>" class="btn btn-primary"> Editer le rapport</a>
+                            <a href="index.php?id=121&id_rapport=<?= $_GET['id_rapport'] ?>" class="btn btn-primary"> Suppprimer le rapport</a>
                         </div>
                         <?php endif ?>
                     </div>

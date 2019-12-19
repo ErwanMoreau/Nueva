@@ -84,7 +84,10 @@ if( !isset($_SESSION['acces'])){
       <!-- Informations de la personnes -->
       <div class="row">
        <div class="col-md-12">
-            <?= $resultatCasier['information'] ?>
+            <p><?= $resultatCasier['information'] ?></p>
+       </div>
+       <div class="col-md-12 customTAR">
+        <a class="customLinkBis" href="index.php?id=8&id_casier=<?= $resultatCasier['id']  ?>">Editer le casier</a>
        </div>
       </div>
     </div>

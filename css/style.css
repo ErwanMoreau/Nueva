@@ -132,6 +132,7 @@
 }
 .customLink{
   text-decoration: none;
+  
 }
 .customColorSvg{
   fill: white;
@@ -301,4 +302,11 @@
     position: absolute;
     top: 10px;
     left: 250px;
+}
+.customLinkBis{
+  color: black;
+}
+
+.customDate{
+  font-size: 0.6rem;
 }

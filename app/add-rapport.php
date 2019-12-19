@@ -8,6 +8,8 @@ if(isset($_POST) && !empty($_POST)) {
     $contenue = $_POST['editor'];
     $type = $_POST['id_type'];
     $auteur = $_POST['id'];
+    $modif = date('d-m-Y H:i');
+
 
     $exist = $connexion->prepare('SELECT * FROM rapport WHERE title= :title AND id_type= :id_type ');
     $exist->bindValue(':title', $title, PDO::PARAM_STR);
