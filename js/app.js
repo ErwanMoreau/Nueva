@@ -13,12 +13,6 @@ $(function(){
 			}
 	}
 
-	$('#btnContenue').on('click',function(){
-		$('#editor').trumbowyg('html', msg);
-	})
-	$('#editor').trumbowyg();
-
-
 
 	$('#inputPassword').on('click',function(){
 

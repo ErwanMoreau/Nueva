@@ -266,14 +266,14 @@ $resultat= $sql->fetch(PDO::FETCH_ASSOC);
       </div>
     </div>
     <!-- Hierachy LInk  -->
-    <div class="row mt-4">
-      <div class="col-md-2 offset-md-2">
-      <svg width="30px" height="30px" xmlns="http://www.w3.org/2000/svg" id="Layer_3" enable-background="new 0 0 64 64"  viewBox="0 0 64 64"  class=""><g><g><g><path d="m17 36h-14v-8h14z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"/><path d="m36 18h-14v-8h14z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"/><path d="m60 11h-14v-8h14z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"/><path d="m60 25h-14v-8h14z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"/><path d="m36 54h-14v-8h14z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"/><path d="m60 47h-14v-8h14z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"/><path d="m60 61h-14v-8h14z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"/></g><path d="m11 26v-11h9v-2h-10c-.553 0-1 .448-1 1v12z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"/><path d="m20 49h-9v-11h-2v12c0 .552.447 1 1 1h10z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"/><path d="m44 20h-2v-12h2v-2h-3c-.553 0-1 .448-1 1v6h-2v2h2v6c0 .552.447 1 1 1h3z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"/><path d="m44 56h-2v-12h2v-2h-3c-.553 0-1 .448-1 1v6h-2v2h2v6c0 .552.447 1 1 1h3z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"/></g></g> 
-      </svg>
-      </div>
-      <div class="col-md-7 mt-1">
-        <a href="index.php?id=10" class="customLink customH1Bis"> Hierachie</a>
-      </div>
-    </div>
+<!--    <div class="row mt-4">-->
+<!--      <div class="col-md-2 offset-md-2">-->
+<!--      <svg width="30px" height="30px" xmlns="http://www.w3.org/2000/svg" id="Layer_3" enable-background="new 0 0 64 64"  viewBox="0 0 64 64"  class=""><g><g><g><path d="m17 36h-14v-8h14z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"/><path d="m36 18h-14v-8h14z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"/><path d="m60 11h-14v-8h14z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"/><path d="m60 25h-14v-8h14z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"/><path d="m36 54h-14v-8h14z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"/><path d="m60 47h-14v-8h14z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"/><path d="m60 61h-14v-8h14z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"/></g><path d="m11 26v-11h9v-2h-10c-.553 0-1 .448-1 1v12z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"/><path d="m20 49h-9v-11h-2v12c0 .552.447 1 1 1h10z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"/><path d="m44 20h-2v-12h2v-2h-3c-.553 0-1 .448-1 1v6h-2v2h2v6c0 .552.447 1 1 1h3z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"/><path d="m44 56h-2v-12h2v-2h-3c-.553 0-1 .448-1 1v6h-2v2h2v6c0 .552.447 1 1 1h3z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"/></g></g> -->
+<!--      </svg>-->
+<!--      </div>-->
+<!--      <div class="col-md-7 mt-1">-->
+<!--        <a href="index.php?id=10" class="customLink customH1Bis"> Hierachie</a>-->
+<!--      </div>-->
+<!--    </div>-->
   </div>
 </div>

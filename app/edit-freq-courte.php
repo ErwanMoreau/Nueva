@@ -6,8 +6,12 @@ $freqBis = strval(rand(0,9));
 
 $modif = date('d-m-Y H:i');
 
+if ($freqC === '30' || $freqC === '31') {
+    $freq = '32.'.$freqBis;
+} else {
+    $freq = (string)$freqC.'.'.$freqBis;
+}
 
-$freq = (string)$freqC.'.'.$freqBis;
 $id = 1;
 
 $sql = $connexion->prepare('UPDATE frequence SET freqCourte= :freq WHERE id= :id');
