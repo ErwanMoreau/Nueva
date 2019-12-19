@@ -35,6 +35,8 @@ require 'toolbox.inc.php';
 
     $arr_content[ 23 ] = 'edit-user';
     $arr_content[ 24 ] = 'new-password';
+    $arr_content[ 25 ] = 'add-amende';
+    $arr_content[ 26 ] = 'edit-amende';
     
 
     // Back page
