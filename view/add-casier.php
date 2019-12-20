@@ -3,9 +3,7 @@ if( !isset($_SESSION['acces'])){
     header('Location: index.php?id=1');
 }
 ?>
- <script type="text/javascript">
-    bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
-  </script>
+
 <div class="container-fluid mt-5">
   <div class="container">
     <form action="index.php?id=105" method="POST">

@@ -27,6 +27,10 @@ ob_start();
     require_once 'view/head.php'
 
 ?>
+<script type="text/javascript">
+   bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
+//  new nicEditor({iconsPath : './nicEditorIcons.gif'})
+</script>
 <div class="container-fluid">
     <div class="row">
         <?php 

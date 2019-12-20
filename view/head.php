@@ -3,8 +3,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="node_modules/trumbowyg/dist/ui/trumbowyg.min.css">
-    <script type="text/javascript" src="../nicEdit.js"></script>
+
+    <script type="text/javascript" src="./nicEdit.js"></script>
     <!-- Bootstrap CSS -->
     <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.min.css">

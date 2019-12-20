@@ -9,9 +9,6 @@ if( !isset($_SESSION['acces'])){
     $resultat = $sql->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-<script type="text/javascript">
-    bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
-</script>
 <div class="container-fluid mt-3">
   <form action="index.php?id=119" method="POST">
     <div class="card">

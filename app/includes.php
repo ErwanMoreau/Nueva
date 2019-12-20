@@ -78,6 +78,11 @@ require 'toolbox.inc.php';
 
     $arr_content[ 126 ] = 'deconnexion';
 
+    $arr_content[ 127 ] = '';
+    $arr_content[ 128 ] = '';
+    $arr_content[ 129 ] = '';
+    $arr_content[ 130 ] = '';
+
 
 
 
