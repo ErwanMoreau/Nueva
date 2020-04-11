@@ -22,7 +22,7 @@ if( isset($_POST) && !empty($_POST)){
 
         if ( empty($_POST['information'])){
 
-            $sql= $connexion->prepare('INSERT INTO casier (nom, prenom, numero_de_casier, telephone, information) VALUES(:nom, :prenom, :casier, :telephone, :information)');
+            $sql= $connexion->prepare('INSERT INTO casier (nom, prenom, numeroCasier, telephone, information) VALUES(:nom, :prenom, :casier, :telephone, :information)');
             $sql->bindValue(':nom', $nom, PDO::PARAM_STR);
             $sql->bindValue(':prenom', $prenom, PDO::PARAM_STR);
             $sql->bindValue(':casier', $casier, PDO::PARAM_INT);
@@ -32,17 +32,17 @@ if( isset($_POST) && !empty($_POST)){
             header('Location: index.php?id=22');
         } else {
 
-            $sql= $connexion->prepare('INSERT INTO casier (nom, prenom, numero_de_casier, telephone) VALUES(:nom, :prenom, :casier, :telephone)');
+            $sql= $connexion->prepare('INSERT INTO casier (nom, prenom, numeroCasier, telephone) VALUES(:nom, :prenom, :casier, :telephone)');
             $sql->bindValue(':nom', $nom, PDO::PARAM_STR);
             $sql->bindValue(':prenom', $prenom, PDO::PARAM_STR);
             $sql->bindValue(':casier', $casier, PDO::PARAM_INT);
             $sql->bindValue(':telephone', $telephone, PDO::PARAM_INT);
             $sql->execute();
             
-            header('Location: index.php?id=22');
+            // header('Location: index.php?id=22');
         }
     } else {
-        header('Location: index.php?id=22');
+        // header('Location: index.php?id=22');
     }
 
     
@@ -50,5 +50,5 @@ if( isset($_POST) && !empty($_POST)){
 
     
 } else {
-    header('Location: index.php?id=22');
+    // header('Location: index.php?id=22');
 }

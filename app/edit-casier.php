@@ -13,7 +13,7 @@ if( isset($_POST) && !empty($_POST)){
 
         if ( empty($_POST['information'])){
 
-            $sql= $connexion->prepare('UPDATE casier SET nom= :nom, prenom= :prenom, numero_de_casier= :casier, telephone = :telephone, information= :information WHERE id= :id');
+            $sql= $connexion->prepare('UPDATE casier SET nom= :nom, prenom= :prenom, numero_de_casier= :casier, telephone = :telephone, information= :information WHERE id_casier= :id');
             $sql->bindValue(':id', $id, PDO::PARAM_INT);
             $sql->bindValue(':nom', $nom, PDO::PARAM_STR);
             $sql->bindValue(':prenom', $prenom, PDO::PARAM_STR);
@@ -24,7 +24,7 @@ if( isset($_POST) && !empty($_POST)){
             header('Location: index.php?id=22');
         } else {
 
-            $sql= $connexion->prepare('UPDATE casier SET nom= :nom, prenom= :prenom, numero_de_casier= :casier, telephone = :telephone WHERE id= :id');
+            $sql= $connexion->prepare('UPDATE casier SET nom= :nom, prenom= :prenom, numero_de_casier= :casier, telephone = :telephone WHERE id_casier= :id');
             $sql->bindValue(':id', $id, PDO::PARAM_INT);
             $sql->bindValue(':nom', $nom, PDO::PARAM_STR);
             $sql->bindValue(':prenom', $prenom, PDO::PARAM_STR);

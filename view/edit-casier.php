@@ -3,7 +3,7 @@ if( !isset($_SESSION['acces'])){
     header('Location: index.php?id=1');
 }
 $id = $_GET['id_casier'];
-$sql = $connexion->prepare('SELECT * FROM casier WHERE id= :id');
+$sql = $connexion->prepare('SELECT * FROM casier WHERE id_casier= :id');
 $sql->bindValue(':id', $id, PDO::PARAM_INT);
 $sql->execute();
 $resultat = $sql->fetch(PDO::FETCH_ASSOC);
@@ -47,7 +47,7 @@ $resultat = $sql->fetch(PDO::FETCH_ASSOC);
                 <div class="input-group-prepend">
                   <button (click)="generate()" class="btn btn-outline-primary" type="button" id="numerosCasier">Numéros de Casier</button>
                 </div>
-                <input type="text" value="<?= $resultat['numero_de_casier'] ?>" id="numberCasier" name="number" class="form-control" placeholder="" aria-label="numerosCasier" aria-describedby="numerosCasier" readonly required>
+                <input type="text" value="<?= $resultat['numeroCasier'] ?>" id="numberCasier" name="number" class="form-control" placeholder="" aria-label="numerosCasier" aria-describedby="numerosCasier" readonly required>
               </div>
             </div>
             <div class="col-md-6">

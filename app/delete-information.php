@@ -8,7 +8,7 @@ require 'bdd.php';
 
         $id= $_GET['id_info'];
     
-        $sql = $connexion->prepare('UPDATE information set isDelete = 1 WHERE id= :id ');
+        $sql = $connexion->prepare('UPDATE information set isDelete = 1 WHERE id_information = :id ');
         $sql->bindValue(':id', $id, PDO::PARAM_INT );
         $sql->execute();
     

@@ -20,7 +20,7 @@ require 'bdd.php';
         var_dump($resultat['password']);
         $hashPassword = password_hash($password,  PASSWORD_BCRYPT, $options);
         var_dump($hashPassword);
-        $update = $connexion->prepare('UPDATE user SET password = :password WHERE id= :id');
+        $update = $connexion->prepare('UPDATE user SET password = :password WHERE id_user = :id');
         $update->bindValue(':id',$id_user,PDO::PARAM_INT);
         $update->bindValue(':password', $hashPassword, PDO::PARAM_STR);
         $update->execute();

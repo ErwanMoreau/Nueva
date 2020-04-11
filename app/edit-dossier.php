@@ -9,7 +9,7 @@ if( isset($_POST) & !empty($_POST)) {
     $contenue = $_POST['editor'];
     $dossier = $_POST['id_dossier'];
 
-    $sql = $connexion->prepare('UPDATE dossier SET  title= :title, contenue= :contenue, id_type= :id_type WHERE id= :id_dossier');
+    $sql = $connexion->prepare('UPDATE dossier SET  title= :title, contenue= :contenue, id_type= :id_type WHERE id_dossier= :id_dossier');
     $sql->bindValue(':title', $title, PDO::PARAM_STR);
     $sql->bindValue(':contenue', $contenue, PDO::PARAM_STR);
     $sql->bindValue(':id_type', $id_type, PDO::PARAM_INT);

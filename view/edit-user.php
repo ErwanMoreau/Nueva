@@ -8,7 +8,7 @@ require './app/bdd.php';
     $resultat = $grade->fetchAll(PDO::FETCH_ASSOC);
 
     $id = $_GET['id_user'];
-    $user = $connexion->prepare('SELECT * FROM user WHERE id= :id ');
+    $user = $connexion->prepare('SELECT * FROM user WHERE id_user= :id ');
     $user->bindValue(':id', $id , PDO::PARAM_INT);
     $user->execute();
     $resultatUser = $user->fetch(PDO::FETCH_ASSOC);
@@ -34,7 +34,7 @@ require './app/bdd.php';
                                 <?php
                                 foreach ($resultat as $key) {
                                     ?>
-                                    <option value="<?= $key['id'] ?>"<?php if($resultatUser['id_grade'] === $key['id']):?>selected<?php endif; ?> ><?= $key['label'] ?></option>
+                                    <option value="<?= $key['id_grade'] ?>"<?php if($resultatUser['id_grade'] === $key['id_grade']):?>selected<?php endif; ?> ><?= $key['label'] ?></option>
 
                                     <?php
                                 }
@@ -95,7 +95,7 @@ require './app/bdd.php';
                 <div class="row">
                     <div class="col-md-12 customTAR">
                         <input type="hidden" value="<?= $id ?>" name="id_user">
-                        <a href="index.php?id=125&id_user=<?= $resultatUser['id'] ?>" class="customReset">new password</a>
+                        <a href="index.php?id=125&id_user=<?= $resultatUser['id_user'] ?>" class="customReset">new password</a>
                     </div>
                 </div>
             </div>

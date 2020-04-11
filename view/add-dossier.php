@@ -1,7 +1,7 @@
 <?php 
     require './app/bdd.php';
 
-    $sql = $connexion->prepare('SELECT * FROM type WHERE id BETWEEN 5 AND 8');
+    $sql = $connexion->prepare('SELECT * FROM type WHERE id_type BETWEEN 5 AND 8');
     $sql->execute();
     $resultat = $sql->fetchAll(PDO::FETCH_ASSOC);
 
@@ -25,7 +25,7 @@
                                 <select name="id_type" class="custom-select" id="inputGroupSelect02">
                                     <option selected>Choose...</option>
                                 <?php foreach ($resultat as $key):?>
-                                    <option value="<?= $key['id'] ?>"><?= $key['label'] ?></option>
+                                    <option value="<?= $key['id_type'] ?>"><?= $key['label'] ?></option>
                                 <?php endforeach ?>
                                 </select>
                                 <div class="input-group-append">

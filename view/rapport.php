@@ -5,7 +5,7 @@ if( !isset($_SESSION['acces'])){
     require './app/bdd.php';
 
     $id_rapport = $_GET['id_rapport'];
-    $sql = $connexion->prepare('SELECT rapport.id,rapport.id_user, rapport.title, rapport.contenue,  user.nom, type.label, type.class FROM rapport, user, type where rapport.id= :id_rapport AND rapport.id_user = user.id AND rapport.id_type = type.id');
+    $sql = $connexion->prepare('SELECT rapport.id_rapport,rapport.id_user, rapport.title, rapport.contenue,  user.nom, type.label, type.class FROM rapport, user, type where rapport.id_rapport= :id_rapport AND rapport.id_user = user.id_user AND rapport.id_type = type.id_type');
     $sql->bindValue(':id_rapport', $id_rapport,PDO::PARAM_INT);
     $sql->execute();
     $resultat = $sql->fetch(PDO::FETCH_ASSOC);
@@ -38,11 +38,10 @@ if( !isset($_SESSION['acces'])){
                             <!-- <span>Ecrit par: <?php //echo  $resultat['nom'] ?> le <?php //echo $resultat['date'] ?></span> -->
                         </div>
                         <?php if($_SESSION['acces']['id_user'] === $resultat['id_user']):?>
-
-                        <div class="col-md-8 customTAR">
-                            <a href="index.php?id=13&id_rapport=<?= $_GET['id_rapport'] ?>" class="btn btn-primary"> Editer le rapport</a>
-                            <a href="index.php?id=121&id_rapport=<?= $_GET['id_rapport'] ?>" class="btn btn-primary"> Suppprimer le rapport</a>
-                        </div>
+                            <div class="col-md-8 customTAR">
+                                <a href="index.php?id=13&id_rapport=<?= $_GET['id_rapport'] ?>" class="btn btn-primary"> Editer le rapport</a>
+                                <a href="index.php?id=121&id_rapport=<?= $_GET['id_rapport'] ?>" class="btn btn-primary"> Suppprimer le rapport</a>
+                            </div>
                         <?php endif ?>
                     </div>
                 </div>

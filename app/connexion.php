@@ -16,7 +16,7 @@ if(isset($_POST) && !empty($_POST)){
         
         if(isset($_POST['gridCheck1'])){
             
-            $array_user = ['email' => $user['email'], 'token' => $user['token']];
+            $array_user = ['email' => $user['email'], 'matricule' => $user['matricule']];
             $tableau_serialize = serialize($array_user);
             setcookie("AlreadyConnect", $tableau_serialize, time()+3600*24*365);
     
@@ -24,9 +24,9 @@ if(isset($_POST) && !empty($_POST)){
         }
 
         if(!empty($user)){
-            $_SESSION['acces'] = $array_cont = ['id_user' => $user['id'], 'nom' => $user['nom'],'prenom' => $user['prenom']];
+            $_SESSION['acces'] = $array_cont = ['id_user' => $user['id_user'], 'nom' => $user['nom'],'prenom' => $user['prenom']];
             
-                if($user['id_grade'] >= '5'){
+                if($user['id_grade'] >= '8'){
                     $_SESSION['acces+'] = true;
                 }
             header('Location: index.php?id=3');

@@ -3,7 +3,7 @@ require_once 'bdd.php';
 $id=$_GET['id_user'];
 
 
-$edit_transaction = $connexion->prepare('DELETE FROM user  WHERE id= :id');
+$edit_transaction = $connexion->prepare('DELETE FROM user  WHERE id_user= :id');
 $edit_transaction->bindvalue(':id',$id,PDO::PARAM_STR);
 
 

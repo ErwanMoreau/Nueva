@@ -32,7 +32,10 @@
  .customTitleCardLitle{
     font-size: 1rem;
  }
- 
+ .logoAgora{
+  width: 155px;
+
+}
 
  /* ----------------------------------------------------------------------------- */
 
@@ -71,10 +74,9 @@
    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
  }
  .brand_logo {
-   height: 150px;
-   width: 150px;
-   border-radius: 50%;
-   border: 2px solid white;
+    height: 122px;
+    width: 130px;
+    border-radius: 11%;
  }
  .form_container {
    margin-top: 100px;
@@ -107,7 +109,6 @@
  }
  .customPos{
    position: absolute;
-   left: 50%;
    top:  200px;
  }
 
@@ -216,6 +217,7 @@
   }
 }
 
+
  /* ------------------------------------------------------------------------------------------- */
 
 /*  DashBoard  */
@@ -257,25 +259,29 @@
    text-decoration: underline;
    font-weight: bold;
  }
- .arrestation{
+ .recherche{
     color: white;
      background-color: #dc3545;
      border-color: #dc3545;
+     margin-right: 10px;
  }
- .rapportDeMission{
+ .mission{
      color: white;
      background-color: #28a745;
      border-color: #28a745;
+     margin-right: 10px;
  }
- .interrogatoire{
+ .effectifs{
      color: white;
      background-color: #007bff;
      border-color: #007bff;
+     margin-right: 10px;
  }
- .perquisition{
+ .divers{
      color: white;
      background-color: #17a2b8;
      border-color: #17a2b8;
+     margin-right: 10px;
  }
 /* ------------------------------------------------------------------------------------------- */
 

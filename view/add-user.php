@@ -1,7 +1,7 @@
 <?php
-if( !isset($_SESSION['acces'])){
-    header('Location: index.php?id=1');
-}
+// if( !isset($_SESSION['acces+'])){
+//     header('Location: index.php?id=1');
+// }
     require './app/bdd.php';
     $grade = $connexion->prepare('SELECT *  FROM grade');
     $grade->execute();
@@ -15,7 +15,7 @@ if( !isset($_SESSION['acces'])){
         <div class="card-header">
           <div class="row mb-2">
             <div class="col-md-12">
-              <h1 class="customTitleAdd">Ajouter un policier</h1>
+              <h1 class="customTitleAdd">Ajouter un utilisateur</h1>
             </div>
           </div>
           <div class="row">
@@ -29,7 +29,7 @@ if( !isset($_SESSION['acces'])){
                     <?php 
                       foreach ($resultat as $key) {
                         ?>
-                        <option value="<?= $key['id'] ?>"><?= $key['label'] ?></option>
+                        <option value="<?= $key['id_grade'] ?>"><?= $key['label'] ?></option>
 
                         <?php
                       }

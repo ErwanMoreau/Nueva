@@ -1,7 +1,6 @@
 <?php 
     require './app/bdd.php';
-    $sql = $connexion->prepare('SELECT dossier.id, dossier.title, dossier.date, user.nom, type.label, type.class FROM dossier, user, type WHERE dossier.id_user = user.id AND dossier.id_type = type.id ORDER BY date');
-
+    $sql = $connexion->prepare('SELECT dossier.id, dossier.title, dossier.date, user.nom, type.label, type.class FROM dossier, user, type WHERE dossier.id_user = user.id_user AND dossier.id_type = type.id_type ORDER BY date');
     $sql->execute();
     $resultat = $sql->fetchAll(PDO::FETCH_ASSOC);
 ?>

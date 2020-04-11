@@ -11,7 +11,7 @@ if( isset($_POST) & !empty($_POST)) {
     $fichierPolice = $_POST['fichierPolice'];
     $casierJudiciaire = $_POST['casierJudiciaire'];
 
-    $add = $connexion->prepare('UPDATE amende  SET id_category= :id_category, label= :label, classification= :classification, sanction= :sanction, fichierPolice= :fichierPolice, CasierJudiciaire= :CasierJudiciaire WHERE id= :id');
+    $add = $connexion->prepare('UPDATE amende  SET id_category= :id_category, label= :label, classification= :classification, sanction= :sanction, fichierPolice= :fichierPolice, CasierJudiciaire= :CasierJudiciaire WHERE id_amende= :id');
     $add->bindValue(':id', $id, PDO::PARAM_INT);
     $add->bindValue(':id_category', $id_category, PDO::PARAM_INT);
     $add->bindValue(':label', $label, PDO::PARAM_STR);

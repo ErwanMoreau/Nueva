@@ -10,9 +10,9 @@ if( !isset($_SESSION['acces'])){
 
 ?>
 
-<a href="index.php?id=7" class="customBtn btn btn-primary">Ajouter un Casier</a>
+<!-- <a href="index.php?id=7" class="customBtn btn btn-primary">Ajouter un Casier</a> -->
 
-<table class="table">
+<table class="table mt-4">
   <thead>
     <tr>
         <th scope="col">#</th>
@@ -30,8 +30,8 @@ if( !isset($_SESSION['acces'])){
         <th scope="row"><?=$numb;?></th>
         <td><?= $key['nom'] ?></td>
         <td><?= $key['prenom'] ?></td>
-        <td><?= $key['numero_de_casier'] ?></td>
-        <td><a href="index.php?id=9&id_casier=<?= $key['id'] ?>" class="btn btn-primary customBtnBis"> Voir le Casier Judiciaire</a></td>
+        <td><?= $key['numeroCasier'] ?></td>
+        <td><a href="index.php?id=9&id_casier=<?= $key['id_casier'] ?>" class="btn btn-sm btn-primary customBtnBis"> Voir le Casier Judiciaire</a></td>
     </tr>
     <?php
         $numb++;

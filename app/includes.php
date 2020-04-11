@@ -38,7 +38,7 @@ require 'toolbox.inc.php';
     $arr_content[ 25 ] = 'add-amende';
     $arr_content[ 26 ] = 'edit-amende';
     
-
+    $arr_content[ 27 ] = 'calculateur';
     // Back page
     $arr_content[ 100 ] = 'connexion';
     $arr_content[ 101 ] = 'reset-password';

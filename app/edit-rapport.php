@@ -12,7 +12,7 @@ if(isset($_POST) && !empty($_POST)) {
     var_dump($contenue, $title, $type);
     
     
-        $sql = $connexion->prepare('UPDATE rapport SET title= :title, contenue= :contenue, id_type= :id_type WHERE id= :id');
+        $sql = $connexion->prepare('UPDATE rapport SET title= :title, contenue= :contenue, id_type= :id_type WHERE id_rapport= :id');
         $sql->bindValue(':id', $id, PDO::PARAM_INT);
         $sql->bindValue(':title', $title, PDO::PARAM_STR);
         $sql->bindValue(':contenue', $contenue, PDO::PARAM_STR);

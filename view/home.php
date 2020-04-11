@@ -8,67 +8,89 @@ if( !isset($_SESSION['acces'])){
  ?>
 <div class="container-fluid mt-5">
   <div class="row">
+ <!-- Generate Frequencie --> 
+    <?php 
+        $freq = $connexion->prepare('SELECT * FROM frequence');
+        $freq->execute();
+        $resultatFreq = $freq->fetch(PDO::FETCH_ASSOC);
 
-    <?php
-      $rapport = $connexion->prepare('SELECT * FROM rapport WHERE isDelete= 0 LIMIT 5');
-      $rapport->execute();
-      $resusltatRapport = $rapport->fetchAll(PDO::FETCH_ASSOC);
-    ?>
-
-  <?php
-    $rapport = $connexion->prepare('SELECT * FROM rapport WHERE isDelete= 0 LIMIT 6');
-    $rapport->execute();
-    $resusltatRapport = $rapport->fetchAll(PDO::FETCH_ASSOC);
-
-  ?>
-
-  <!-- Last Rapport -->
-    <div class="col-md-6">
+      ?>
+ <!-- Generate Frequencie --> 
+  <div class="col-md-6 ">
       <div class="row">
-        <div class="col-md-12 customTAC">
-          
-        </div>
+        
         <div class="col-md-12">
           <div class="card">
             <div class="card-header">
               <div class="row">
-                <div class="col-md-12 mt-3 mb-2 customTAC ">
-                  <h1 class="customTitle">Derniers Rapport de Mission</h1>
+                <div class="col-md-12 customTAC">
+                <h1 class="customTitle">Générateur de Fréquences</h1>
                 </div>
               </div>
             </div>
             <div class="card-body">
-              <table class="table table-striped">
-                <thead>
-                  <tr>
-                    <th scope="col">Rapports</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <?php 
-                  foreach ($resusltatRapport as $key):?>
-                  <tr>
-                    <td scope="row"><?= $key['title'] ?></td>
-                    <td>
-                      <a href="index.php?id=11&id_rapport=<?= $key['id'] ?>" class="btn btn-primary customBtnDash">Voir +</a>
-                    </td>
-                  </tr>
-                  <?php endforeach ?>
-                </tbody>
-              </table>
+              <div class="row mt-5 mb-4">
+                  <div class="col-md-6 customTAC">
+                    <form action="index.php?id=122" method="POST"> 
+                        <div class="row">
+                          <div class="col-md-12">
+                            <h1 class="customTitleBis">fréquence</h1>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-12">
+                            <p class="customCount"><?= $resultatFreq['freqCourte'] ?></p>
+                          </div>
+                          <div class="col-md-12">
+                            <h3 class="customDate">edité à <?php  echo $resultatFreq['dateCourte'] ?>  </h3>
+                            
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-12">
+                              <button name="freqC" type="submit" id="frequenceC" class="btn btn-primary">Nouvelle Fréquence</button>
+                          </div>
+                        </div>
+                    </form>
+                  </div>
+                  <div class="col-md-6 customTAC">
+                    <form action="index.php?id=123" method="POST"> 
+                        <div class="row">
+                          <div class="col-md-12">
+                            <h1 class="customTitleBis">fréquence</h1>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-12">
+                            <p class="customCount"><?= $resultatFreq['freqLongue'] ?></p>
+                          </div>
+                          <div class="col-md-12">
+                            <h3 class="customDate">edité à <?php  echo $resultatFreq['dateLongue'] ?>  </h3>
+                            
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-12">
+                              <button name="freqC" type="submit" id="frequenceL" class="btn btn-primary">Nouvelle Fréquence</button>
+                          </div>
+                        </div>
+                    </form>
+                  </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
     </div>
     <!--  General Informations -->
     <?php 
-      $info = $connexion->prepare('SELECT * FROM information WHERE isDelete = 0 LIMIT 5');
+      $info = $connexion->prepare('SELECT * FROM information WHERE isDelete = 0 ORDER BY date DESC LIMIT 7');
       $info->execute();
       $resultatInfo = $info->fetchAll(PDO::FETCH_ASSOC);
-//      var_dump($resultatInfo);
+
     ?>
-    <!--  -->
+    <!--  General Informations -->
     <div class="col-md-6">
       <div class="row">
         
@@ -110,7 +132,7 @@ if( !isset($_SESSION['acces'])){
                   <tr>
                     <td scope="row"><?= $key['description'] ?></td>
                     <td>
-                      <a href="index.php?id=118&id_info=<?=$key['id'] ?>" >
+                      <a href="index.php?id=118&id_info=<?=$key['id_information'] ?>" >
                         <svg class="customSvg" width="25px" height="25px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                           viewBox="0 0 475.2 475.2" style="enable-background:new 0 0 475.2 475.2;" xml:space="preserve">
                             <g>
@@ -165,60 +187,6 @@ if( !isset($_SESSION['acces'])){
           </div>
         </div>
       </div>
-    </div>
-  </div>
-
-  <?php 
-    $freq = $connexion->prepare('SELECT * FROM frequence');
-    $freq->execute();
-    $resultatFreq = $freq->fetch(PDO::FETCH_ASSOC);
-
-  ?>
-  <!-- Generate Frequencie -->
-  <div class="row mt-5">
-    <div class="col-md-6 offset-md-3">
-      <div class="row">
-        
-        <div class="col-md-12">
-          <div class="card">
-            <div class="card-header">
-              <div class="row">
-                <div class="col-md-12 customTAC">
-                <h1 class="customTitle">Générateur de Fréquences</h1>
-                </div>
-              </div>
-            </div>
-            <div class="card-body">
-              <div class="row mt-5 mb-4">
-                  <div class="col-md-12 customTAC">
-                    <form action="index.php?id=122" method="POST"> 
-                        <div class="row">
-                          <div class="col-md-12">
-                            <h1 class="customTitleBis">fréquence</h1>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-md-12">
-                            <p class="customCount"><?= $resultatFreq['freqCourte'] ?></p>
-                          </div>
-                          <div class="col-md-12">
-                            <!-- <h3 class="customDate">edité à <?php  //echo $resultatFreq['date'] ?>  </h3> -->
-                            
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-md-12">
-                              <button name="freqC" type="submit" id="frequenceC" class="btn btn-primary">Nouvelle Fréquence</button>
-                          </div>
-                        </div>
-                    </form>
-                  </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
     </div>
   </div>
 </div>

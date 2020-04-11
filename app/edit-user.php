@@ -11,7 +11,7 @@
 
     var_dump($id, $nom, $prenom, $email, $matricule, $grade);
 
-    $sql = $connexion->prepare('UPDATE  user SET  nom=:nom, prenom= :prenom, email = :email, matricule= :matricule,  id_grade= :id_grade WHERE id= :id');
+    $sql = $connexion->prepare('UPDATE  user SET  nom=:nom, prenom= :prenom, email = :email, matricule= :matricule,  id_grade= :id_grade WHERE id_user= :id');
     $sql->bindValue(':id', $id, PDO::PARAM_INT);
     $sql->bindValue(':nom', $nom, PDO::PARAM_STR);
     $sql->bindValue(':prenom', $prenom, PDO::PARAM_STR);

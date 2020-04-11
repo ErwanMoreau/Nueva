@@ -4,7 +4,7 @@ if( !isset($_SESSION['acces+'])){
 }
     require './app/bdd.php';
 
-    $sql = $connexion->prepare('SELECT * FROM type WHERE id BETWEEN 1 AND 4 ');
+    $sql = $connexion->prepare('SELECT * FROM category');
     $sql->execute();
     $resultat = $sql->fetchAll(PDO::FETCH_ASSOC);
 
@@ -27,7 +27,7 @@ if( !isset($_SESSION['acces+'])){
                                 <select name="id_category" class="custom-select" id="inputGroupSelect02">
                                     <option >Choose...</option>
                                 <?php foreach ($resultat as $key):?>
-                                    <option value="<?= $key['id'] ?>"><?= $key['label'] ?></option>
+                                    <option value="<?= $key['id_category'] ?>"><?= $key['label'] ?></option>
                                 <?php endforeach ?>   
                                 </select>
                                 <div class="input-group-append">
@@ -37,51 +37,45 @@ if( !isset($_SESSION['acces+'])){
                         </div>
                         <div class="col-md-6">
                             <div class="input-group mb-3">
-                                <input type="text" name="label" class="form-control" placeholder="Exces de Vitesse, etc.." aria-label="Recipient's username" aria-describedby="button-addon2">
+                                    <select name="classification" class="custom-select" id="inputGroupSelect02">
+                                        <option value="Mineure">Mineure</option>
+                                        <option value="Majeure">Majeure</option>
+                                    </select>
+                                    <div class="input-group-append">
+                                        <label class="input-group-text" for="inputGroupSelect02">Classification</label>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="input-group mb-3">
+                                <input type="text" name="Infraction" class="form-control" placeholder="Conduite d'un véhicule immobilisé" aria-label="" aria-describedby="button-addon2">
                                 <div class="input-group-append">
                                     <button class="btn btn-primary" type="button" id="button-addon2">Infraction</button>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="input-group mb-3">
-                                <input type="text" name="classification" class="form-control" placeholder="Contravention de Classe 1" aria-label="" aria-describedby="button-addon2">
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary" type="button" id="button-addon2">Classification</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="input-group mb-3">
-                                <input type="text" name="sanction" class="form-control" placeholder="1h de TIG, 48h de garde a vue" aria-label="" aria-describedby="button-addon2">
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary" type="button" id="button-addon2">Sanction</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
                         <div class="col-md-12">
-                            <h2 class="customTitle">Inscrit dans le:</h2>
-                        </div>
-                        <div class="col-md-6">
                             <div class="input-group mb-3">
-                                <input type="text" name="fichierPolice" class="form-control" placeholder="Oui / Non" aria-label="Contravention de Classe 1" aria-describedby="button-addon2">
+                                <input type="text" name="contravention" class="form-control" placeholder="10000" aria-label="" aria-describedby="button-addon2">
                                 <div class="input-group-append">
-                                    <button class="btn btn-primary" type="button" id="button-addon2">fichier police</button>
+                                    <button class="btn btn-primary" type="button" id="button-addon2">contravention</button>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                    </div>
+                    <div class="row">
+                        
+                        <div class="col-md-12">
                             <div class="input-group mb-3">
-                                <input type="text" name="casierJudiciaire" class="form-control" placeholder="Oui / Non" aria-label="1h de TIG, 48h de garde a vue" aria-describedby="button-addon2">
+                                <input type="text" name="complement" class="form-control" placeholder="Suspension du permis 4 h" aria-label="Contravention de Classe 1" aria-describedby="button-addon2">
                                 <div class="input-group-append">
-                                    <button class="btn btn-primary" type="button" id="button-addon2">Casier Judiciaire</button>
+                                    <button class="btn btn-primary" type="button" id="button-addon2">Complement</button>
                                 </div>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
                 <div class="card-footer customTAR">

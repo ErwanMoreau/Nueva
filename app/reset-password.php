@@ -26,7 +26,7 @@ if( isset($_POST) && !empty($_POST)){
             if ( $newPassword === $confirmPassword){
               $finalNewPassword =  password_hash($newPassword, PASSWORD_BCRYPT, $options);
 
-              $newSql = $connexion->prepare('UPDATE user SET password= :password where id= :id');
+              $newSql = $connexion->prepare('UPDATE user SET password= :password where id_user= :id');
               $newSql->bindValue(':id', $id_user, PDO::PARAM_INT);
               $newSql->bindValue(':password', $finalNewPassword, PDO::PARAM_STR);
               $newSql->execute();

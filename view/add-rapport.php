@@ -36,7 +36,7 @@ if( !isset($_SESSION['acces'])){
               <select class="custom-select" id="inputGroupSelect01" name="id_type">
                 <option selected>Choose...</option>
                 <?php foreach ($resultat as $key): ?>
-                <option value="<?= $key['id'] ?>"><?= $key['label'] ?></option>
+                <option value="<?= $key['id_type'] ?>"><?= $key['label'] ?></option>
                 <?php endforeach ?>
               </select>
             </div>

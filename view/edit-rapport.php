@@ -9,7 +9,7 @@ if( !isset($_SESSION['acces'])){
     $resultat = $sql->fetchAll(PDO::FETCH_ASSOC);
 
     $id = $_GET['id_rapport'];
-    $rapport = $connexion->prepare('SELECT * FROM rapport WHERE id= :id');
+    $rapport = $connexion->prepare('SELECT * FROM rapport WHERE id_rapport= :id');
     $rapport->bindValue(':id', $id, PDO::PARAM_INT);
     $rapport->execute();
     $resultatRapport = $rapport->fetch(PDO::FETCH_ASSOC);
@@ -44,7 +44,7 @@ if( !isset($_SESSION['acces'])){
               <select class="custom-select" id="inputGroupSelect01" name="id_type">
                 <option selected>Choose...</option>
                 <?php foreach ($resultat as $key): ?>
-                <option value="<?= $key['id'] ?>" <?php if($key['id'] === $resultatRapport['id_type']):?> selected <?php endif; ?>  > <?= $key['label'] ?> </option>
+                <option value="<?= $key['id'] ?>" <?php if($key['id_type'] === $resultatRapport['id_type']):?> selected <?php endif; ?>  > <?= $key['label'] ?> </option>
                 <?php endforeach ?>
               </select>
             </div>

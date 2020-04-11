@@ -1,12 +1,12 @@
 <?php 
     require './app/bdd.php';
 
-    $sql = $connexion->prepare('SELECT * FROM type WHERE id BETWEEN 5 AND 8');
+    $sql = $connexion->prepare('SELECT * FROM type WHERE id_type BETWEEN 5 AND 8');
     $sql->execute();
     $resultat = $sql->fetchAll(PDO::FETCH_ASSOC);
 
     $id = $_GET['id_dossier'];
-    $get = $connexion->prepare('SELECT * FROM dossier WHERE id= :id');
+    $get = $connexion->prepare('SELECT * FROM dossier WHERE id_dossier= :id');
     $get->bindValue(':id', $id, PDO::PARAM_INT);
     $get->execute();
     $resultatDossier = $get->fetch(PDO::FETCH_ASSOC);
@@ -30,7 +30,7 @@
                                 <select name="id_type" class="custom-select" id="inputGroupSelect02">
                                     <option selected>Choose...</option>
                                 <?php foreach ($resultat as $key):?>
-                                    <option value="<?= $key['id'] ?>"<?php if($key['id'] === $resultatDossier['id_type']): ?> selected <?php endif ?>    ><?= $key['label'] ?></option>
+                                    <option value="<?= $key['id_type'] ?>"<?php if($key['id_type'] === $resultatDossier['id_type']): ?> selected <?php endif ?>    ><?= $key['label'] ?></option>
                                 <?php endforeach ?>
                                 </select>
                                 <div class="input-group-append">
